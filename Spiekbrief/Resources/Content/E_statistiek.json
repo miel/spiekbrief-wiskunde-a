@@ -1,0 +1,513 @@
+{
+ "id": "E",
+ "code": "E",
+ "title": "Statistiek en kansrekening",
+ "symbol": "chart.bar",
+ "color": "purple",
+ "topics": [
+  {
+   "id": "e-data",
+   "title": "Data en diagrammen",
+   "summary": "Soorten data, centrum- en spreidingsmaten.",
+   "syllabusRef": "E2.1",
+   "keywords": [
+    "data",
+    "gemiddelde",
+    "mediaan",
+    "modus",
+    "boxplot",
+    "kwartiel",
+    "standaardafwijking",
+    "spreiding",
+    "histogram"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Domein E wordt getoetst in het **schoolexamen**, niet in het centraal examen. Check je PTA welke onderdelen bij jouw school horen."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "soort data",
+      "voorbeeld"
+     ],
+     "rows": [
+      [
+       "kwalitatief nominaal",
+       "kleur, merk (geen volgorde)"
+      ],
+      [
+       "kwalitatief ordinaal",
+       "cijfer 1–5 voor tevredenheid (wel volgorde)"
+      ],
+      [
+       "kwantitatief discreet",
+       "aantal kinderen (telbaar)"
+      ],
+      [
+       "kwantitatief continu",
+       "lengte, tijd (meetbaar)"
+      ]
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Centrummaten"
+    },
+    {
+     "type": "formula",
+     "id": "st-gemiddelde",
+     "latex": "\\bar{x} = \\frac{\\sum x}{n}",
+     "spoken": "x gemiddelde is de som van x gedeeld door n",
+     "badge": "se",
+     "caption": "Gemiddelde",
+     "question": "Formule voor het gemiddelde?"
+    },
+    {
+     "type": "text",
+     "text": "**Mediaan**: het middelste getal als je alles op volgorde zet (bij een even aantal: het gemiddelde van de middelste twee). **Modus**: de waarde die het vaakst voorkomt."
+    },
+    {
+     "type": "tip",
+     "text": "Bij een **scheve** verdeling of **uitschieters** geeft de mediaan een eerlijker beeld dan het gemiddelde."
+    },
+    {
+     "type": "heading",
+     "text": "Spreidingsmaten"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "maat",
+      "betekenis"
+     ],
+     "rows": [
+      [
+       "spreidingsbreedte",
+       "grootste − kleinste waarde"
+      ],
+      [
+       "kwartielafstand ($Q_3 - Q_1$)",
+       "breedte van de middelste 50 %"
+      ],
+      [
+       "standaardafwijking ($\\sigma$ of $s$)",
+       "gemiddelde afstand tot het gemiddelde"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Een **boxplot** tekent de vijf getallen: minimum, $Q_1$, mediaan, $Q_3$, maximum. De box bevat de middelste 50 % van de data."
+    },
+    {
+     "type": "numworks",
+     "app": "Statistiek",
+     "steps": [
+      "Voer de waarden in de kolom $V1$ in (en eventueel de frequenties in $N1$).",
+      "Ga naar het tabblad met de **Statistieken**: gemiddelde, standaardafwijking, kwartielen en mediaan staan er allemaal.",
+      "Bij **Grafiek** kies je histogram of **Boxplot**."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e-kansen",
+   "title": "Kansrekening",
+   "summary": "Kansregels, boomdiagram en verwachtingswaarde.",
+   "syllabusRef": "E4.1",
+   "keywords": [
+    "kans",
+    "kansregels",
+    "complement",
+    "onafhankelijk",
+    "voorwaardelijke kans",
+    "verwachtingswaarde",
+    "boomdiagram"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Domein E wordt getoetst in het **schoolexamen**, niet in het centraal examen. Check je PTA welke onderdelen bij jouw school horen."
+    },
+    {
+     "type": "formula",
+     "id": "kans-definitie",
+     "latex": "P(A) = \\frac{\\text{aantal gunstige uitkomsten}}{\\text{aantal mogelijke uitkomsten}}",
+     "spoken": "P van A is aantal gunstige uitkomsten gedeeld door aantal mogelijke uitkomsten",
+     "badge": "se",
+     "caption": "Kans bij gelijke uitkomsten"
+    },
+    {
+     "type": "formula",
+     "id": "kans-complement",
+     "latex": "P(\\text{niet } A) = 1 - P(A)",
+     "spoken": "P van niet A is 1 min P van A",
+     "badge": "se",
+     "caption": "Complementregel: handig bij 'minstens één'",
+     "question": "Complementregel: $P(\\text{niet } A) = ?$"
+    },
+    {
+     "type": "formula",
+     "id": "kans-som",
+     "latex": "P(A \\text{ of } B) = P(A) + P(B)",
+     "spoken": "P van A of B is P van A plus P van B",
+     "badge": "se",
+     "caption": "Somregel, als A en B elkaar uitsluiten"
+    },
+    {
+     "type": "formula",
+     "id": "kans-product",
+     "latex": "P(A \\text{ en } B) = P(A) \\cdot P(B)",
+     "spoken": "P van A en B is P van A keer P van B",
+     "badge": "se",
+     "caption": "Productregel, als A en B onafhankelijk zijn",
+     "question": "Productregel voor onafhankelijke gebeurtenissen?"
+    },
+    {
+     "type": "formula",
+     "id": "kans-voorwaardelijk",
+     "latex": "P(A \\mid B) = \\frac{P(A \\text{ en } B)}{P(B)}",
+     "spoken": "P van A gegeven B is P van A en B gedeeld door P van B",
+     "badge": "se",
+     "caption": "Voorwaardelijke kans"
+    },
+    {
+     "type": "text",
+     "text": "In een **boomdiagram**: vermenigvuldig de kansen langs een tak, tel de kansen van verschillende takken op."
+    },
+    {
+     "type": "heading",
+     "text": "Verwachtingswaarde"
+    },
+    {
+     "type": "formula",
+     "id": "kans-ev",
+     "latex": "E(X) = \\sum x \\cdot P(X = x)",
+     "spoken": "E van X is de som van x keer P van X is x",
+     "badge": "se",
+     "caption": "Verwachtingswaarde van een toevalsvariabele",
+     "question": "Formule voor de verwachtingswaarde $E(X)$?"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Bij een spel win je € 5 met kans $0,1$, € 1 met kans $0,3$ en niets met kans $0,6$. Meedoen kost € 1,50. Is het spel eerlijk?",
+     "steps": [
+      {
+       "text": "Bereken de verwachte opbrengst.",
+       "latex": "E(X) = 5 \\cdot 0,1 + 1 \\cdot 0,3 + 0 \\cdot 0,6 = 0,8"
+      },
+      {
+       "text": "Vergelijk met de inzet: € 0,80 tegenover € 1,50."
+      },
+      {
+       "text": "Gemiddeld verlies je € 0,70 per spel, dus het spel is niet eerlijk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e-binomiaal",
+   "title": "Binomiale verdeling",
+   "summary": "Vaste kans, vast aantal herhalingen, aantal successen.",
+   "syllabusRef": "E5.1",
+   "keywords": [
+    "binomiaal",
+    "binomiale verdeling",
+    "succes",
+    "verwachtingswaarde",
+    "standaardafwijking",
+    "binompdf",
+    "binomcdf"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Domein E wordt getoetst in het **schoolexamen**, niet in het centraal examen. Check je PTA welke onderdelen bij jouw school horen."
+    },
+    {
+     "type": "text",
+     "text": "Gebruik de binomiale verdeling als: het aantal keer $n$ vastligt, elke keer dezelfde kans $p$ op succes heeft, en de keren **onafhankelijk** zijn. $X$ telt het aantal successen."
+    },
+    {
+     "type": "formula",
+     "id": "bin-pmf",
+     "latex": "P(X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1 - p)^{\\,n - k}",
+     "spoken": "P van X is k is n boven k keer p tot de k keer 1 min p tot de n min k",
+     "badge": "se",
+     "caption": "Kans op precies $k$ successen",
+     "question": "Formule voor $P(X = k)$ bij een binomiale verdeling?"
+    },
+    {
+     "type": "formula",
+     "id": "bin-ev",
+     "latex": "E(X) = n \\cdot p",
+     "spoken": "E van X is n keer p",
+     "badge": "se",
+     "caption": "Verwachtingswaarde",
+     "question": "Verwachtingswaarde bij een binomiale verdeling?"
+    },
+    {
+     "type": "formula",
+     "id": "bin-sd",
+     "latex": "\\sigma(X) = \\sqrt{n \\cdot p \\cdot (1 - p)}",
+     "spoken": "sigma van X is de wortel van n keer p keer 1 min p",
+     "badge": "se",
+     "caption": "Standaardafwijking",
+     "question": "Standaardafwijking bij een binomiale verdeling?"
+    },
+    {
+     "type": "graph",
+     "graph": "binomiaal"
+    },
+    {
+     "type": "numworks",
+     "app": "Kansrekenen",
+     "steps": [
+      "Kies **Binomiale verdeling** en vul $n$ en $p$ in.",
+      "Kies daarna het type kans: $P(X = k)$, $P(X \\leq k)$ of $P(a \\leq X \\leq b)$.",
+      "In **Rekenen** kan het ook direct: `binompdf(k,n,p)` voor $P(X = k)$ en `binomcdf(k,n,p)` voor $P(X \\leq k)$."
+     ],
+     "note": "'Minstens $k$' reken je als $1 - P(X \\leq k - 1)$."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Een toets heeft 20 meerkeuzevragen met 4 opties. Je gokt alles. Wat is de kans op minstens 8 goed?",
+     "steps": [
+      {
+       "text": "Hier is $n = 20$ en $p = 0,25$.",
+       "latex": "X \\sim B(20;\\, 0,25)"
+      },
+      {
+       "text": "Minstens 8 is het complement van hoogstens 7.",
+       "latex": "P(X \\geq 8) = 1 - P(X \\leq 7)"
+      },
+      {
+       "text": "Met de GR:",
+       "latex": "1 - \\text{binomcdf}(7; 20; 0,25) \\approx 0,102"
+      },
+      {
+       "text": "De kans is ongeveer 10 %."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e-normaal",
+   "title": "Normale verdeling",
+   "summary": "Klokvorm, vuistregels en de GR.",
+   "syllabusRef": "E5.2",
+   "keywords": [
+    "normale verdeling",
+    "vuistregels",
+    "z-waarde",
+    "normalcdf",
+    "invnorm",
+    "klokvorm",
+    "standaardafwijking"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Domein E wordt getoetst in het **schoolexamen**, niet in het centraal examen. Check je PTA welke onderdelen bij jouw school horen."
+    },
+    {
+     "type": "text",
+     "text": "Een normale verdeling is symmetrisch en klokvormig rond het gemiddelde $\\mu$, met standaardafwijking $\\sigma$."
+    },
+    {
+     "type": "heading",
+     "text": "De drie vuistregels"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "interval",
+      "deel van de data"
+     ],
+     "rows": [
+      [
+       "$\\mu \\pm \\sigma$",
+       "ongeveer 68 %"
+      ],
+      [
+       "$\\mu \\pm 2\\sigma$",
+       "ongeveer 95 %"
+      ],
+      [
+       "$\\mu \\pm 3\\sigma$",
+       "ongeveer 99,7 %"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "id": "nor-z",
+     "latex": "z = \\frac{x - \\mu}{\\sigma}",
+     "spoken": "z is x min mu gedeeld door sigma",
+     "badge": "se",
+     "caption": "$z$-waarde: hoeveel standaardafwijkingen zit $x$ van het gemiddelde af?",
+     "question": "Formule voor de $z$-waarde?"
+    },
+    {
+     "type": "graph",
+     "graph": "normaal"
+    },
+    {
+     "type": "numworks",
+     "app": "Kansrekenen",
+     "steps": [
+      "Kies **Normale verdeling** en vul $\\mu$ en $\\sigma$ in.",
+      "Kies het type kans, bijvoorbeeld $P(a \\leq X \\leq b)$.",
+      "In **Rekenen**: `normcdf(a,μ,σ)` geeft $P(X \\leq a)$, `normcdfrange(a,b,μ,σ)` geeft $P(a \\leq X \\leq b)$ en `invnorm(p,μ,σ)` geeft de grenswaarde bij een kans."
+     ],
+     "note": "Voor $P(X \\geq a)$ reken je $1 - P(X \\leq a)$."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "De lengte van mannen is normaal verdeeld met $\\mu = 181$ cm en $\\sigma = 7$ cm. Hoeveel procent is langer dan 195 cm?",
+     "steps": [
+      {
+       "text": "Bereken de $z$-waarde.",
+       "latex": "z = \\frac{195 - 181}{7} = 2"
+      },
+      {
+       "text": "Vuistregel: buiten $\\mu \\pm 2\\sigma$ ligt ongeveer 5 %, dus aan één kant de helft.",
+       "latex": "P(X > 195) \\approx 2,5\\pct"
+      },
+      {
+       "text": "Met de GR nauwkeuriger:",
+       "latex": "1 - \\text{normcdf}(195; 181; 7) \\approx 0,0228"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Steekproef van gemiddelden"
+    },
+    {
+     "type": "formula",
+     "id": "nor-sqrtn",
+     "latex": "\\sigma(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}",
+     "spoken": "sigma van x gemiddelde is sigma gedeeld door wortel n",
+     "badge": "se",
+     "caption": "Wortel-$n$-wet: gemiddelden van steekproeven spreiden minder",
+     "question": "Wat is de standaardafwijking van het steekproefgemiddelde?"
+    }
+   ]
+  },
+  {
+   "id": "e-toetsen",
+   "title": "Steekproef, betrouwbaarheid en toetsen",
+   "summary": "Betrouwbaarheidsintervallen en hypothesetoetsen.",
+   "syllabusRef": "E6.1",
+   "keywords": [
+    "steekproef",
+    "betrouwbaarheidsinterval",
+    "hypothese",
+    "toetsen",
+    "significant",
+    "overschrijdingskans",
+    "proportie"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Domein E wordt getoetst in het **schoolexamen**, niet in het centraal examen. Check je PTA welke onderdelen bij jouw school horen."
+    },
+    {
+     "type": "text",
+     "text": "Een steekproef moet **aselect** en **representatief** zijn, anders zeggen de uitkomsten niets over de populatie."
+    },
+    {
+     "type": "heading",
+     "text": "95 %-betrouwbaarheidsinterval"
+    },
+    {
+     "type": "formula",
+     "id": "bi-proportie",
+     "latex": "\\hat{p} \\pm 2 \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}",
+     "spoken": "p dakje plus of min 2 keer de wortel van p dakje keer 1 min p dakje gedeeld door n",
+     "badge": "se",
+     "caption": "Voor een proportie, met steekproefproportie $\\hat{p}$",
+     "question": "95 %-betrouwbaarheidsinterval voor een proportie?"
+    },
+    {
+     "type": "formula",
+     "id": "bi-gemiddelde",
+     "latex": "\\bar{x} \\pm 2 \\cdot \\frac{s}{\\sqrt{n}}",
+     "spoken": "x gemiddelde plus of min 2 keer s gedeeld door wortel n",
+     "badge": "se",
+     "caption": "Voor een gemiddelde",
+     "question": "95 %-betrouwbaarheidsinterval voor een gemiddelde?"
+    },
+    {
+     "type": "text",
+     "text": "Een groter interval betekent meer onzekerheid. Vier keer zo veel data ($n$) maakt het interval **twee** keer zo smal."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "In een steekproef van 400 kiezers is 220 vóór. Geef een 95 %-betrouwbaarheidsinterval.",
+     "steps": [
+      {
+       "text": "Steekproefproportie:",
+       "latex": "\\hat{p} = \\frac{220}{400} = 0,55"
+      },
+      {
+       "text": "Bereken de marge.",
+       "latex": "2 \\cdot \\sqrt{\\frac{0,55 \\cdot 0,45}{400}} \\approx 0,0497"
+      },
+      {
+       "text": "Interval:",
+       "latex": "0,55 \\pm 0,05 \\;\\Rightarrow\\; [0,50;\\, 0,60]"
+      },
+      {
+       "text": "Omdat 0,50 net binnen het interval ligt, kun je niet concluderen dat een meerderheid vóór is."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Hypothesetoets"
+    },
+    {
+     "type": "text",
+     "text": "Stappen: 1) stel $H_0$ en $H_1$ op, 2) kies het significantieniveau $\\alpha$ (meestal 0,05), 3) bereken de **overschrijdingskans** (de kans op dit resultaat of extremer, als $H_0$ waar is), 4) vergelijk met $\\alpha$ en trek een conclusie in de context."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "uitkomst",
+      "conclusie"
+     ],
+     "rows": [
+      [
+       "kans $< \\alpha$",
+       "verwerp $H_0$: het verschil is significant"
+      ],
+      [
+       "kans $\\geq \\alpha$",
+       "verwerp $H_0$ niet: toeval kan het verklaren"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "text": "Bij een **tweezijdige** toets vergelijk je de overschrijdingskans met $\\frac{\\alpha}{2}$ (of verdubbel je de kans)."
+    },
+    {
+     "type": "tip",
+     "text": "'$H_0$ niet verwerpen' betekent niet dat $H_0$ waar is: je hebt alleen te weinig bewijs voor het tegendeel."
+    }
+   ]
+  }
+ ],
+ "schoolExamOnly": true
+}

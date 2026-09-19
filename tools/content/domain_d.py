@@ -1,0 +1,177 @@
+from lib import domain, example, formula, graph, heading, numworks, table, text, tip, topic, warning
+
+rijen = topic(
+    "d1-rijen", "Rijen: rekenkundig en meetkundig",
+    "Directe en recursieve formules, en de rij van verschillen.",
+    "D1.1", ["rijen", "rekenkundig", "meetkundig", "recursief", "directe formule", "verschil", "reden"],
+    [
+        text(r"Notatie: $u_n$ of $u(n)$ is de term met nummer $n$. Let op waar de rij begint: bij $n = 0$ of bij $n = 1$."),
+        heading("Rekenkundige rij"),
+        text("Bij elke stap komt er **hetzelfde getal bij** (het verschil $v$)."),
+        formula("rij-rek-direct", r"u_n = u_0 + n \cdot v", "u n is u 0 plus n keer v",
+                caption="Directe formule", question="Directe formule van een rekenkundige rij (start bij $n = 0$)?"),
+        formula("rij-rek-rec", r"u_n = u_{n-1} + v \quad\text{met}\quad u_0 = \ldots", "u n is u n min 1 plus v, met u 0 gegeven",
+                caption="Recursieve formule", question="Recursieve formule van een rekenkundige rij?"),
+        heading("Meetkundige rij"),
+        text("Bij elke stap wordt er met **hetzelfde getal vermenigvuldigd** (de reden $r$)."),
+        formula("rij-mk-direct", r"u_n = u_0 \cdot r^{\,n}", "u n is u 0 keer r tot de n",
+                caption="Directe formule", question="Directe formule van een meetkundige rij (start bij $n = 0$)?"),
+        formula("rij-mk-rec", r"u_n = r \cdot u_{n-1} \quad\text{met}\quad u_0 = \ldots", "u n is r keer u n min 1, met u 0 gegeven",
+                caption="Recursieve formule", question="Recursieve formule van een meetkundige rij?"),
+        table(["hoe herken je het?", "rekenkundig", "meetkundig"], [
+            ["verschil $u_n - u_{n-1}$", "constant", "niet constant"],
+            [r"quotiënt $\frac{u_n}{u_{n-1}}$", "niet constant", "constant"],
+            ["grafiek", "punten op een rechte lijn", "exponentieel"],
+        ]),
+        heading("Rij van verschillen"),
+        text(r"De rij van verschillen van een **rekenkundige** rij is constant. De rij van verschillen van een **meetkundige** rij is zelf weer meetkundig, met dezelfde reden $r$."),
+        example("Voorbeeld", r"Gegeven de rij $5, 8, 11, 14, \ldots$ Stel een directe formule op en bereken $u_{20}$.", [
+            ("De verschillen zijn steeds 3: rekenkundig.", r"u_n = 5 + 3n \quad (n = 0, 1, 2, \ldots)"),
+            ("Vul in:", r"u_{20} = 5 + 3 \cdot 20 = 65"),
+        ]),
+    ],
+)
+
+recursief = topic(
+    "d1-recursief", "Recursieve formules in een context",
+    "Doorrekenen met een recursieve formule, en grenswaarden.",
+    "D1.7", ["recursief", "doorrekenen", "grenswaarde", "model", "somrij", "sigma"],
+    [
+        text(r"Veel modellen combineren vermenigvuldigen en optellen, bijvoorbeeld een medicijn dat voor $80\pct$ in het bloed blijft en waar elke dag 50 mg bij komt:"),
+        formula("rec-model", r"u_n = 0,8 \cdot u_{n-1} + 50", "u n is 0,8 keer u n min 1 plus 50",
+                badge="extra", caption="Voorbeeld van een recursief model"),
+        formula("rec-grens", r"u = r \cdot u + b \;\Leftrightarrow\; u = \frac{b}{1 - r}", "u is r keer u plus b, dus u is b gedeeld door 1 min r",
+                badge="extra", caption=r"Grenswaarde bij $|r| < 1$: vul $u_n = u_{n-1} = u$ in",
+                question=r"Hoe bereken je de grenswaarde van $u_n = r \cdot u_{n-1} + b$?"),
+        graph("rij-recursief"),
+        heading("Somrij"),
+        text(r"De **somrij** telt de termen op: $S_n = u_0 + u_1 + \ldots + u_n$."),
+        formula("rec-sigma", r"S_n = \sum_{k=0}^{n} u_k", "S n is de som van k is 0 tot n van u k",
+                caption=r"Sigmanotatie: tel $u_k$ op voor $k = 0$ tot en met $n$",
+                question=r"Wat betekent $\sum_{k=0}^{n} u_k$?"),
+        formula("rec-som-rek", r"S = \text{aantal termen} \cdot \frac{\text{eerste} + \text{laatste}}{2}", "S is aantal termen keer eerste plus laatste gedeeld door 2",
+                badge="extra", caption="Som van een rekenkundige rij"),
+        formula("rec-som-mk", r"S_n = u_0 \cdot \frac{r^{\,n+1} - 1}{r - 1}", "S n is u 0 keer r tot de n plus 1 min 1, gedeeld door r min 1",
+                badge="extra", caption=r"Som van een meetkundige rij ($r \neq 1$)"),
+        numworks("Rijen", [
+            "Kies **Rij toevoegen** en daarna **Recursief eerste orde** voor $u_{n+1} = \\ldots$, of **Directe formule**.",
+            "Vul de beginwaarde in bij $u_0$ (of $u_1$).",
+            "In **Tabel** lees je de termen af; bij **Grafiek** → **Bereken** staat ook **Som van termen**.",
+        ], note="De somrij kun je ook laten weergeven met de optie **Weergeven van de somrij**."),
+    ],
+)
+
+helling = topic(
+    "d2-helling", "Differentiequotiënt en helling",
+    "Gemiddelde verandering, toenamediagram en de helling in een punt.",
+    "D2.1", ["differentiequotient", "gemiddelde verandering", "toenamediagram", "helling", "hellinggrafiek", "raaklijn", "stijgen"],
+    [
+        formula("hel-dq", r"\frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a}", "delta y gedeeld door delta x is f van b min f van a, gedeeld door b min a",
+                caption=r"Differentiequotiënt op $[a, b]$ = gemiddelde verandering",
+                question=r"Formule voor het differentiequotiënt op $[a, b]$?"),
+        text("Het differentiequotiënt is de **richtingscoëfficiënt van de lijn door de twee punten**. Vertel er altijd de eenheid bij, bijv. 'gemiddeld 2,5 graden per uur'."),
+        heading("Toenemend of afnemend"),
+        table(["", "betekenis"], [
+            ["toenemend stijgend", "stijgt, en steeds sneller"],
+            ["afnemend stijgend", "stijgt, maar steeds langzamer"],
+            ["toenemend dalend", "daalt, en steeds sneller"],
+            ["afnemend dalend", "daalt, maar steeds langzamer"],
+        ]),
+        text("In een **toenamediagram** staan de toenames per interval als staafjes. Hogere staafjes betekenen een steilere grafiek."),
+        graph("toenamediagram"),
+        heading("Helling in een punt"),
+        text(r"De helling in één punt is de richtingscoëfficiënt van de **raaklijn** in dat punt. Dat is precies de afgeleide: $f'(a)$."),
+        graph("raaklijn"),
+        text(r"Een **hellinggrafiek** is de grafiek van de helling: waar $f$ een top heeft, is de hellinggrafiek $0$; waar $f$ stijgt, ligt de hellinggrafiek boven de $x$-as."),
+        graph("hellinggrafiek"),
+        numworks("Functies", [
+            "Voer de functie in en ga naar **Grafiek**.",
+            "**Bereken** → **Raaklijn** tekent de raaklijn en geeft de helling.",
+            "In de app **Rekenen** geeft `diff(f(x),x,a)` de afgeleide in $x = a$ (toolbox → **Differentiaalrekening** → **Afgeleide**).",
+        ]),
+        example("Voorbeeld", r"Van $N(t) = 200 \cdot 1,08^{\,t}$ (aantal na $t$ jaar). Bereken de gemiddelde toename per jaar op $[0, 10]$.", [
+            ("Bereken de twee functiewaarden.", r"N(0) = 200 \quad\text{en}\quad N(10) \approx 431,8"),
+            ("Differentiequotiënt:", r"\frac{431,8 - 200}{10 - 0} \approx 23,2"),
+            ("Gemiddeld ongeveer 23 erbij per jaar.", None),
+        ]),
+    ],
+)
+
+afgeleide = topic(
+    "d3-afgeleide", "Afgeleide: de rekenregels",
+    "Standaardafgeleiden (paraat) en de regels van de formulelijst.",
+    "D3.1", ["afgeleide", "differentieren", "somregel", "productregel", "quotientregel", "kettingregel", "formulelijst"],
+    [
+        text(r"Notaties: $f'(x)$ en $\frac{dy}{dx}$. De afgeleide geeft de **helling** van de grafiek."),
+        heading("Standaardafgeleiden (uit je hoofd)"),
+        formula("afg-macht", r"f(x) = a \cdot x^n \;\Rightarrow\; f'(x) = a \cdot n \cdot x^{n-1}", "f van x is a keer x tot de n, dan is f accent van x a keer n keer x tot de n min 1",
+                caption="Machtsfunctie", question=r"Afgeleide van $f(x) = a \cdot x^n$?"),
+        formula("afg-constant", r"f(x) = c \;\Rightarrow\; f'(x) = 0", "f van x is c, dan is f accent van x nul",
+                caption="Een constante verandert niet", question=r"Afgeleide van een constante $c$?"),
+        formula("afg-lineair", r"f(x) = ax + b \;\Rightarrow\; f'(x) = a", "f van x is a x plus b, dan is f accent van x a",
+                caption="Lineaire functie: de rc"),
+        formula("afg-e", r"f(x) = e^x \;\Rightarrow\; f'(x) = e^x", "f van x is e tot de x, dan is f accent van x e tot de x",
+                caption=r"De $e$-macht blijft zichzelf", question=r"Afgeleide van $e^x$?"),
+        formula("afg-gmacht", r"f(x) = g^x \;\Rightarrow\; f'(x) = g^x \cdot \ln(g)", "f van x is g tot de x, dan is f accent van x g tot de x keer ln g",
+                caption="Exponentiële functie", question=r"Afgeleide van $g^x$?"),
+        formula("afg-ln", r"f(x) = \ln(x) \;\Rightarrow\; f'(x) = \frac{1}{x}", "f van x is ln x, dan is f accent van x 1 gedeeld door x",
+                caption="Natuurlijke logaritme", question=r"Afgeleide van $\ln(x)$?"),
+        formula("afg-log", r"f(x) = \glog{g}(x) \;\Rightarrow\; f'(x) = \frac{1}{x \cdot \ln(g)}", "f van x is g-log x, dan is f accent van x 1 gedeeld door x keer ln g",
+                caption="Logaritme met grondtal $g$", question=r"Afgeleide van $\glog{g}(x)$?"),
+        warning(r"De afgeleide van $\sin(x)$ hoef je bij wiskunde A **niet** te kennen (syllabus D3.1)."),
+        heading("Rekenregels (staan op de formulelijst)"),
+        formula("afg-som", r"s(x) = f(x) + g(x) \;\Rightarrow\; s'(x) = f'(x) + g'(x)", "somregel: de afgeleide van een som is de som van de afgeleiden",
+                badge="formulelijst", caption="Somregel"),
+        formula("afg-verschil", r"v(x) = f(x) - g(x) \;\Rightarrow\; v'(x) = f'(x) - g'(x)", "verschilregel: de afgeleide van een verschil is het verschil van de afgeleiden",
+                badge="formulelijst", caption="Verschilregel"),
+        formula("afg-product", r"p(x) = f(x) \cdot g(x) \;\Rightarrow\; p'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)", "productregel: f accent keer g plus f keer g accent",
+                badge="formulelijst", caption="Productregel"),
+        formula("afg-quotient", r"q(x) = \frac{f(x)}{g(x)} \;\Rightarrow\; q'(x) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{\left(g(x)\right)^2}", "quotientregel: f accent keer g min f keer g accent, gedeeld door g kwadraat",
+                badge="formulelijst", caption="Quotiëntregel"),
+        formula("afg-ketting", r"k(x) = f(g(x)) \;\Rightarrow\; k'(x) = f'(g(x)) \cdot g'(x)", "kettingregel: f accent van g van x keer g accent van x",
+                badge="formulelijst", caption="Kettingregel (ook: $\\frac{dk}{dx} = \\frac{df}{dg} \\cdot \\frac{dg}{dx}$)"),
+        example("Voorbeeld", r"Differentieer $f(x) = 5x^3 - \frac{2}{x}$.", [
+            (r"Schrijf de breuk als macht: $\frac{2}{x} = 2x^{-1}$.", r"f(x) = 5x^3 - 2x^{-1}"),
+            ("Differentieer term voor term (somregel en machtsregel).", r"f'(x) = 15x^2 + 2x^{-2}"),
+            ("Eventueel terug als breuk:", r"f'(x) = 15x^2 + \frac{2}{x^2}"),
+        ]),
+        example("Voorbeeld (kettingregel)", r"Differentieer $f(x) = e^{3x^2}$.", [
+            (r"Buitenkant $e^{\ldots}$, binnenkant $3x^2$.", r"f'(x) = e^{3x^2} \cdot \frac{d}{dx}\left(3x^2\right)"),
+            ("De afgeleide van de binnenkant is $6x$.", r"f'(x) = 6x \cdot e^{3x^2}"),
+        ]),
+    ],
+)
+
+extremen = topic(
+    "d3-extremen", "Afgeleide gebruiken: toppen en raaklijnen",
+    "Extreme waarden, optimaliseren en de raaklijn.",
+    "D3.5", ["extremen", "maximum", "minimum", "top", "optimaliseren", "raaklijn", "toppen"],
+    [
+        formula("ext-nul", r"f'(x) = 0", "f accent van x is nul",
+                caption="Bij een top is de helling nul", question="Welke vergelijking los je op om een top te vinden?"),
+        text(r"Werkwijze: los $f'(x) = 0$ op, bereken de bijbehorende $y$-waarde met $f$, en bepaal met een tekenschema of de GR of het een **maximum** of **minimum** is."),
+        table(["teken van $f'$", "de grafiek"], [
+            ["$f'(x) > 0$", "stijgt"],
+            ["$f'(x) = 0$", "horizontale raaklijn: top of buigpunt"],
+            ["$f'(x) < 0$", "daalt"],
+        ]),
+        formula("ext-raaklijn", r"y = f'(a) \cdot (x - a) + f(a)", "y is f accent van a keer x min a, plus f van a",
+                caption=r"Raaklijn in het punt $\left(a, f(a)\right)$",
+                question=r"Formule van de raaklijn in $x = a$?"),
+        example("Voorbeeld (optimaliseren)", r"De winst is $W(q) = -0,5q^2 + 40q - 300$ euro bij $q$ stuks. Bij welk aantal is de winst maximaal?", [
+            ("Differentieer.", r"W'(q) = -q + 40"),
+            (r"Los $W'(q) = 0$ op.", r"-q + 40 = 0 \;\Rightarrow\; q = 40"),
+            (r"Omdat $a < 0$ is het een maximum. Bereken de winst:", r"W(40) = -0,5 \cdot 1600 + 1600 - 300 = 500"),
+            ("Maximale winst € 500 bij 40 stuks.", None),
+        ]),
+        numworks("Functies", [
+            "Voer de functie in en ga naar **Grafiek**.",
+            "**Bereken** → **Maximum** of **Minimum**, en selecteer een gebied rond de top.",
+            "Controleer met `diff(f(x),x,a)` dat de afgeleide daar (bijna) 0 is.",
+        ]),
+        tip("Bij 'bereken exact/algebraïsch' moet je het via $f'(x) = 0$ doen. Bij 'bereken' of 'benader' mag je de GR gebruiken — noteer dan wel je aanpak."),
+    ],
+)
+
+DOMAIN = domain("D", "D", "Verandering", "chart.line.uptrend.xyaxis", "orange",
+                [rijen, recursief, helling, afgeleide, extremen])

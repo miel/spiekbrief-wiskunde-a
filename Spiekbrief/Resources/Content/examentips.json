@@ -1,0 +1,327 @@
+{
+ "id": "tips",
+ "code": "Tips",
+ "title": "Examentips",
+ "symbol": "graduationcap",
+ "color": "teal",
+ "topics": [
+  {
+   "id": "tips-formulelijst",
+   "title": "De formulelijst in het examen",
+   "summary": "Precies de formules die op bladzijde 2 van het examen staan (syllabus bijlage 5).",
+   "syllabusRef": "Bijlage 5",
+   "keywords": [
+    "formulelijst",
+    "formuleblad",
+    "bijlage 5",
+    "differentieren",
+    "logaritmen"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Deze lijst krijg je **bij het examen**. Alles wat in de app oranje is (‘Paraat kennen’), staat er níét op."
+    },
+    {
+     "type": "heading",
+     "text": "Differentiëren"
+    },
+    {
+     "type": "formula",
+     "id": "fl-som",
+     "latex": "s(x) = f(x) + g(x) \\;\\Rightarrow\\; s'(x) = f'(x) + g'(x)",
+     "spoken": "somregel",
+     "badge": "formulelijst",
+     "caption": "somregel"
+    },
+    {
+     "type": "formula",
+     "id": "fl-verschil",
+     "latex": "v(x) = f(x) - g(x) \\;\\Rightarrow\\; v'(x) = f'(x) - g'(x)",
+     "spoken": "verschilregel",
+     "badge": "formulelijst",
+     "caption": "verschilregel"
+    },
+    {
+     "type": "formula",
+     "id": "fl-product",
+     "latex": "p(x) = f(x) \\cdot g(x) \\;\\Rightarrow\\; p'(x) = f'(x) \\cdot g(x) + f(x) \\cdot g'(x)",
+     "spoken": "productregel",
+     "badge": "formulelijst",
+     "caption": "productregel"
+    },
+    {
+     "type": "formula",
+     "id": "fl-quotient",
+     "latex": "q(x) = \\frac{f(x)}{g(x)} \\;\\Rightarrow\\; q'(x) = \\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{\\left(g(x)\\right)^2}",
+     "spoken": "quotientregel",
+     "badge": "formulelijst",
+     "caption": "quotiëntregel"
+    },
+    {
+     "type": "formula",
+     "id": "fl-ketting",
+     "latex": "k(x) = f(g(x)) \\;\\Rightarrow\\; k'(x) = f'(g(x)) \\cdot g'(x)",
+     "spoken": "kettingregel",
+     "badge": "formulelijst",
+     "caption": "kettingregel, ook $\\frac{dk}{dx} = \\frac{df}{dg} \\cdot \\frac{dg}{dx}$"
+    },
+    {
+     "type": "heading",
+     "text": "Logaritmen"
+    },
+    {
+     "type": "formula",
+     "id": "fl-log-som",
+     "latex": "\\glog{g}(a) + \\glog{g}(b) = \\glog{g}(a \\cdot b)",
+     "spoken": "g-log a plus g-log b is g-log a keer b",
+     "badge": "formulelijst",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $b > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "fl-log-verschil",
+     "latex": "\\glog{g}(a) - \\glog{g}(b) = \\glog{g}\\left(\\frac{a}{b}\\right)",
+     "spoken": "g-log a min g-log b is g-log a gedeeld door b",
+     "badge": "formulelijst",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $b > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "fl-log-macht",
+     "latex": "\\glog{g}(a^p) = p \\cdot \\glog{g}(a)",
+     "spoken": "g-log van a tot de p is p keer g-log a",
+     "badge": "formulelijst",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "fl-log-grondtal",
+     "latex": "\\glog{g}(a) = \\frac{\\glog{p}(a)}{\\glog{p}(g)}",
+     "spoken": "g-log a is p-log a gedeeld door p-log g",
+     "badge": "formulelijst",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $p > 0$, $p \\neq 1$"
+    }
+   ]
+  },
+  {
+   "id": "tips-werkwoorden",
+   "title": "Examenwerkwoorden",
+   "summary": "Wat moet je opschrijven bij ‘bereken’, ‘bepaal’, ‘toon aan’ … (syllabus bijlage 2).",
+   "syllabusRef": "Bijlage 2",
+   "keywords": [
+    "examenwerkwoorden",
+    "bereken",
+    "bepaal",
+    "aantonen",
+    "onderzoek",
+    "schets",
+    "teken",
+    "herleid"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "werkwoord",
+      "wat wordt verwacht"
+     ],
+     "rows": [
+      [
+       "berekenen",
+       "het gevraagde uitrekenen; uit je uitwerking moet blijken welke stappen je hebt gezet"
+      ],
+      [
+       "bepalen",
+       "het gevraagde vaststellen en/of uitrekenen; stappen laten zien (mag met de GR)"
+      ],
+      [
+       "aantonen, laten zien dat",
+       "een redenering, bepaling of berekening waaruit blijkt dat het klopt; een voorbeeld is niet genoeg"
+      ],
+      [
+       "afleiden",
+       "met een redenering of berekening laten zien dat de formule volgt"
+      ],
+      [
+       "beredeneren, uitleggen",
+       "de denkstappen opschrijven"
+      ],
+      [
+       "onderzoeken of",
+       "redeneren of rekenen én afsluiten met een conclusie"
+      ],
+      [
+       "oplossen",
+       "de waarden bepalen die aan de (on)gelijkheid voldoen, met stappen"
+      ],
+      [
+       "herleiden",
+       "stap voor stap herschrijven, zonder speciale opties van de GR"
+      ],
+      [
+       "schetsen",
+       "een grafiek met de karakteristieke eigenschappen"
+      ],
+      [
+       "tekenen",
+       "nauwkeurig, met assenstelsel en schaalverdeling"
+      ],
+      [
+       "noemen, geven wat/welke",
+       "alleen het eindantwoord; toelichting hoeft niet"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "‘Algebraïsch’ en ‘exact’ gelden alleen bij wiskunde B. Bij wiskunde A mag je dus in principe altijd de GR gebruiken — behalve bij ‘herleiden’."
+    },
+    {
+     "type": "warning",
+     "text": "Schrijf bij GR-gebruik altijd op wát je invoerde: de formules, het venster en welke optie (snijpunt, maximum …). Alleen een antwoord levert vaak geen punten op."
+    }
+   ]
+  },
+  {
+   "id": "tips-afronden",
+   "title": "Afronden en nauwkeurigheid",
+   "summary": "Hoe nauwkeurig moet je antwoord zijn? (syllabus § 2.1.2)",
+   "syllabusRef": "2.1.2",
+   "keywords": [
+    "afronden",
+    "nauwkeurigheid",
+    "decimalen",
+    "tussenantwoord",
+    "eenheid"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Staat er geen nauwkeurigheid bij, dan leid je die af uit de context. Kies ook een passende eenheid."
+    },
+    {
+     "type": "warning",
+     "text": "Rond **tussenantwoorden niet af**: reken door met de waarde op je GR. Anders wijkt je eindantwoord af."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "context",
+      "logisch antwoord"
+     ],
+     "rows": [
+      [
+       "aantal mensen",
+       "heel getal"
+      ],
+      [
+       "geld",
+       "2 decimalen"
+      ],
+      [
+       "percentage",
+       "1 decimaal, tenzij anders gevraagd"
+      ],
+      [
+       "gegevens met 3 cijfers",
+       "antwoord in ongeveer 3 cijfers"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "Bij ‘hoeveel hele dagen/stuks’ moet je soms **naar boven** afronden (je hebt 8,1 dag nodig, dus 9 dagen), en soms naar beneden (met dit budget passen er 8,7 stuks in, dus 8)."
+    }
+   ]
+  },
+  {
+   "id": "tips-numworks",
+   "title": "NumWorks: instellingen en examenstand",
+   "summary": "Klaarmaken voor het examen en veelgebruikte apps.",
+   "syllabusRef": "ICT",
+   "keywords": [
+    "numworks",
+    "examenstand",
+    "rekenmachine",
+    "radialen",
+    "instellingen",
+    "gr"
+   ],
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Vooraf instellen"
+    },
+    {
+     "type": "numworks",
+     "app": "Instellingen",
+     "steps": [
+      "**Hoekmaat** → **Radialen** (nodig bij sinusmodellen).",
+      "**Resultaatformaat** → **Decimaal**, met het aantal cijfers dat je fijn vindt.",
+      "Decimaalteken op de NumWorks is een **punt**; de komma scheidt argumenten."
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Examenstand (NL)"
+    },
+    {
+     "type": "numworks",
+     "app": "Instellingen",
+     "steps": [
+      "**Examenstand** → **Activeer de NL examenstand** → bevestigen.",
+      "Het lampje bovenop knippert oranje: zo ziet de surveillant dat de stand aan staat.",
+      "Uitzetten kan alleen door de rekenmachine op een computer aan te sluiten."
+     ],
+     "note": "In de NL examenstand zijn **Python** en **Elementen** uitgeschakeld, worden er geen exacte resultaten getoond en kun je geen eenheden gebruiken. Al je ingevoerde gegevens worden gewist, dus activeer de stand ruim vóór het examen en oefen daarna verder."
+    },
+    {
+     "type": "heading",
+     "text": "Welke app waarvoor?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "app",
+      "waarvoor"
+     ],
+     "rows": [
+      [
+       "Rekenen",
+       "gewone berekeningen, `diff(`, `binomial(`, `log(x,a)`"
+      ],
+      [
+       "Functies",
+       "grafiek, tabel, snijpunt, top, nulpunt, raaklijn"
+      ],
+      [
+       "Vergelijking",
+       "vergelijkingen numeriek oplossen"
+      ],
+      [
+       "Rijen",
+       "directe en recursieve formules, tabel en somrij"
+      ],
+      [
+       "Statistiek",
+       "gemiddelde, standaardafwijking, boxplot, histogram"
+      ],
+      [
+       "Kansrekenen",
+       "binomiale en normale verdeling"
+      ],
+      [
+       "Regressie",
+       "trendlijn bij een puntenwolk"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "text": "Deze app mag je **niet** gebruiken tijdens het examen: alleen je rekenmachine en de formulelijst zijn toegestaan."
+    }
+   ]
+  }
+ ]
+}

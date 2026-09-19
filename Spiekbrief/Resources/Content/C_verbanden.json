@@ -1,0 +1,745 @@
+{
+ "id": "C",
+ "code": "C",
+ "title": "Verbanden",
+ "symbol": "function",
+ "color": "green",
+ "topics": [
+  {
+   "id": "c1-lineair",
+   "title": "Lineaire functies",
+   "summary": "Rechte lijnen: richtingscoëfficiënt en startwaarde.",
+   "syllabusRef": "C1.1",
+   "keywords": [
+    "lineair",
+    "rechte lijn",
+    "richtingscoefficient",
+    "rc",
+    "helling",
+    "eerstegraads",
+    "startwaarde"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "lin-formule",
+     "latex": "f(x) = ax + b",
+     "spoken": "f van x is a x plus b",
+     "badge": "paraat",
+     "caption": "$a$ = richtingscoëfficiënt (rc), $b$ = startwaarde",
+     "question": "Standaardvorm van een lineaire functie?"
+    },
+    {
+     "type": "formula",
+     "id": "lin-rc",
+     "latex": "a = \\frac{\\Delta y}{\\Delta x} = \\frac{y_2 - y_1}{x_2 - x_1}",
+     "spoken": "a is delta y gedeeld door delta x, is y 2 min y 1 gedeeld door x 2 min x 1",
+     "badge": "paraat",
+     "caption": "Richtingscoëfficiënt uit twee punten",
+     "question": "Hoe bereken je de rc uit twee punten?"
+    },
+    {
+     "type": "text",
+     "text": "Een verband is lineair als de toename per stap **constant** is. In een tabel met gelijke stappen in $x$ zijn de verschillen in $y$ dan steeds hetzelfde."
+    },
+    {
+     "type": "graph",
+     "graph": "lineair"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Een lijn gaat door $(2, 7)$ en $(6, 19)$. Stel de formule op.",
+     "steps": [
+      {
+       "text": "Bereken eerst de rc.",
+       "latex": "a = \\frac{19 - 7}{6 - 2} = \\frac{12}{4} = 3"
+      },
+      {
+       "text": "Vul een punt in $y = 3x + b$.",
+       "latex": "7 = 3 \\cdot 2 + b \\;\\Rightarrow\\; b = 1"
+      },
+      {
+       "text": "De formule is:",
+       "latex": "y = 3x + 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-kwadratisch",
+   "title": "Tweedegraadsfuncties",
+   "summary": "Parabolen: dal of berg, en de top.",
+   "syllabusRef": "C1.1",
+   "keywords": [
+    "kwadratisch",
+    "parabool",
+    "tweedegraads",
+    "top",
+    "dalparabool",
+    "bergparabool"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "kw-formule",
+     "latex": "f(x) = ax^2 + bx + c",
+     "spoken": "f van x is a x kwadraat plus b x plus c",
+     "badge": "paraat",
+     "caption": "$a > 0$: dalparabool ⌣, $a < 0$: bergparabool ⌢"
+    },
+    {
+     "type": "formula",
+     "id": "kw-top",
+     "latex": "x_{\\text{top}} = \\frac{-b}{2a}",
+     "spoken": "x van de top is min b gedeeld door 2 a",
+     "badge": "extra",
+     "caption": "x-coördinaat van de top",
+     "question": "Wat is de $x$-coördinaat van de top van $f(x) = ax^2 + bx + c$?"
+    },
+    {
+     "type": "text",
+     "text": "Bij wiskunde A hoef je de $abc$-formule niet te kennen. Los kwadratische vergelijkingen op met de GR, of bereken de top met de afgeleide: $f'(x) = 0$."
+    },
+    {
+     "type": "graph",
+     "graph": "kwadratisch"
+    },
+    {
+     "type": "tip",
+     "text": "De parabool is symmetrisch in de verticale lijn door de top. Twee punten met dezelfde $y$-waarde liggen dus even ver van de top."
+    }
+   ]
+  },
+  {
+   "id": "c1-macht",
+   "title": "Machtsfuncties",
+   "summary": "Functies van de vorm $y = a \\cdot x^n$ en evenredigheid.",
+   "syllabusRef": "C1.1",
+   "keywords": [
+    "machtsfunctie",
+    "evenredig",
+    "omgekeerd evenredig",
+    "wortelfunctie",
+    "hyperbool"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "mf-formule",
+     "latex": "f(x) = a \\cdot x^n",
+     "spoken": "f van x is a keer x tot de n",
+     "badge": "paraat",
+     "caption": "Machtsfunctie, $n$ mag ook een breuk of negatief zijn"
+    },
+    {
+     "type": "formula",
+     "id": "mf-evenredig",
+     "latex": "y = a \\cdot x",
+     "spoken": "y is a keer x",
+     "badge": "paraat",
+     "caption": "(Recht) evenredig: samen groter, samen kleiner",
+     "question": "Welke formule hoort bij recht evenredig?"
+    },
+    {
+     "type": "formula",
+     "id": "mf-omgekeerd",
+     "latex": "y = \\frac{a}{x} \\quad\\text{dus}\\quad x \\cdot y = a",
+     "spoken": "y is a gedeeld door x, dus x keer y is a",
+     "badge": "paraat",
+     "caption": "Omgekeerd evenredig: product is constant",
+     "question": "Welke formule hoort bij omgekeerd evenredig?"
+    },
+    {
+     "type": "text",
+     "text": "Bij omgekeerd evenredig geldt: wordt $x$ twee keer zo groot, dan wordt $y$ twee keer zo klein. De $x$-as en de $y$-as zijn asymptoten."
+    },
+    {
+     "type": "graph",
+     "graph": "macht"
+    },
+    {
+     "type": "graph",
+     "graph": "omgekeerd-evenredig"
+    },
+    {
+     "type": "text",
+     "text": "**Evenredig met een macht**: $y = a \\cdot x^n$. Wordt $x$ $k$ keer zo groot, dan wordt $y$ $k^n$ keer zo groot."
+    }
+   ]
+  },
+  {
+   "id": "c1-exponentieel",
+   "title": "Exponentiële functies",
+   "summary": "Groeifactor, beginwaarde, halverings- en verdubbelingstijd.",
+   "syllabusRef": "C1.1",
+   "keywords": [
+    "exponentieel",
+    "groeifactor",
+    "beginwaarde",
+    "halveringstijd",
+    "verdubbelingstijd",
+    "groei",
+    "e-macht",
+    "afname"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "exp-formule",
+     "latex": "f(x) = b \\cdot g^x",
+     "spoken": "f van x is b keer g tot de x",
+     "badge": "paraat",
+     "caption": "$b$ = beginwaarde (bij $x = 0$), $g$ = groeifactor per tijdseenheid",
+     "question": "Standaardvorm van een exponentiële functie?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "groeifactor",
+      "betekenis"
+     ],
+     "rows": [
+      [
+       "$g > 1$",
+       "groei"
+      ],
+      [
+       "$g = 1$",
+       "constant"
+      ],
+      [
+       "$0 < g < 1$",
+       "afname"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "id": "exp-groeifactor",
+     "latex": "g = 1 + \\frac{p}{100}",
+     "spoken": "g is 1 plus p gedeeld door 100",
+     "badge": "paraat",
+     "caption": "Groeipercentage $p\\pct$ per tijdseenheid",
+     "question": "Groeifactor bij $p\\pct$ groei per tijdseenheid?"
+    },
+    {
+     "type": "formula",
+     "id": "exp-omrekenen",
+     "latex": "g_{\\text{nieuw}} = g^{\\,t}",
+     "spoken": "g nieuw is g tot de t",
+     "badge": "paraat",
+     "caption": "Groeifactor per $t$ oude tijdseenheden (bijv. per jaar uit per maand: $t = 12$)",
+     "question": "Hoe reken je een groeifactor om naar een andere tijdseenheid?"
+    },
+    {
+     "type": "formula",
+     "id": "exp-halvering",
+     "latex": "g^{T} = 0,5 \\;\\Leftrightarrow\\; T = \\glog{g}(0,5)",
+     "spoken": "g tot de T is 0,5, dus T is g-log 0,5",
+     "badge": "paraat",
+     "caption": "Halveringstijd",
+     "question": "Hoe bereken je de halveringstijd bij groeifactor $g$?"
+    },
+    {
+     "type": "formula",
+     "id": "exp-verdubbeling",
+     "latex": "g^{T} = 2 \\;\\Leftrightarrow\\; T = \\glog{g}(2)",
+     "spoken": "g tot de T is 2, dus T is g-log 2",
+     "badge": "paraat",
+     "caption": "Verdubbelingstijd",
+     "question": "Hoe bereken je de verdubbelingstijd bij groeifactor $g$?"
+    },
+    {
+     "type": "formula",
+     "id": "exp-e",
+     "latex": "f(x) = b \\cdot e^{kx} \\quad\\text{met}\\quad g = e^{k}",
+     "spoken": "f van x is b keer e tot de k x, met g is e tot de k",
+     "badge": "paraat",
+     "caption": "De $e$-macht: $e \\approx 2,718$",
+     "question": "Wat is de groeifactor van $b \\cdot e^{kx}$?"
+    },
+    {
+     "type": "graph",
+     "graph": "exponentieel"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Een populatie groeit met $12\\pct$ per jaar. Er zijn nu 800 dieren. Na hoeveel jaar zijn het er 2000?",
+     "steps": [
+      {
+       "text": "Groeifactor per jaar: $g = 1,12$. Formule:",
+       "latex": "N(t) = 800 \\cdot 1,12^{\\,t}"
+      },
+      {
+       "text": "Stel de vergelijking op.",
+       "latex": "800 \\cdot 1,12^{\\,t} = 2000"
+      },
+      {
+       "text": "Deel door 800.",
+       "latex": "1,12^{\\,t} = 2,5"
+      },
+      {
+       "text": "Neem de logaritme.",
+       "latex": "t = \\glog{1,12}(2,5) = \\frac{\\ln(2,5)}{\\ln(1,12)} \\approx 8,1"
+      },
+      {
+       "text": "Na ongeveer 8,1 jaar, dus in het 9e jaar."
+      }
+     ]
+    },
+    {
+     "type": "numworks",
+     "app": "Functies",
+     "steps": [
+      "Voer in bij **Uitdrukkingen**: `f(x)=800*1.12^x` en `g(x)=2000`.",
+      "Ga naar **Grafiek** en stel het venster in (bijv. $0 \\leq x \\leq 20$).",
+      "**Bereken** → **Snijpunt** geeft $x \\approx 8,1$."
+     ],
+     "note": "Let op: de NumWorks gebruikt een **punt** als decimaalteken."
+    },
+    {
+     "type": "warning",
+     "text": "Schrijf bij een GR-antwoord altijd op wát je hebt ingevoerd (formules, venster, welke optie). Anders krijg je geen punten."
+    }
+   ]
+  },
+  {
+   "id": "c1-logaritme",
+   "title": "Logaritmen",
+   "summary": "De logaritme als omgekeerde van de exponent, met de rekenregels van de formulelijst.",
+   "syllabusRef": "C2.3",
+   "keywords": [
+    "logaritme",
+    "log",
+    "ln",
+    "grondtal",
+    "rekenregels",
+    "formulelijst",
+    "natuurlijke logaritme"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "log-definitie",
+     "latex": "\\glog{g}(a) = x \\;\\Leftrightarrow\\; g^x = a",
+     "spoken": "g-log a is x, dus g tot de x is a",
+     "badge": "paraat",
+     "caption": "Definitie van de logaritme",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$",
+     "question": "Wat betekent $\\glog{g}(a) = x$?"
+    },
+    {
+     "type": "text",
+     "text": "$\\log(x)$ zonder grondtal betekent $\\glog{10}(x)$. De **natuurlijke logaritme** $\\ln(x)$ heeft grondtal $e$."
+    },
+    {
+     "type": "formula",
+     "id": "log-basis",
+     "latex": "\\glog{g}(1) = 0 \\qquad \\glog{g}(g) = 1 \\qquad \\glog{g}(g^x) = x",
+     "spoken": "g-log 1 is 0, g-log g is 1, g-log van g tot de x is x",
+     "badge": "paraat",
+     "caption": "Handig om te onthouden"
+    },
+    {
+     "type": "heading",
+     "text": "Rekenregels (staan op de formulelijst)"
+    },
+    {
+     "type": "formula",
+     "id": "log-som",
+     "latex": "\\glog{g}(a) + \\glog{g}(b) = \\glog{g}(a \\cdot b)",
+     "spoken": "g-log a plus g-log b is g-log a keer b",
+     "badge": "formulelijst",
+     "caption": "Somregel",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $b > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "log-verschil",
+     "latex": "\\glog{g}(a) - \\glog{g}(b) = \\glog{g}\\left(\\frac{a}{b}\\right)",
+     "spoken": "g-log a min g-log b is g-log a gedeeld door b",
+     "badge": "formulelijst",
+     "caption": "Verschilregel",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $b > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "log-macht",
+     "latex": "\\glog{g}(a^p) = p \\cdot \\glog{g}(a)",
+     "spoken": "g-log van a tot de p is p keer g-log a",
+     "badge": "formulelijst",
+     "caption": "Machtregel",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$"
+    },
+    {
+     "type": "formula",
+     "id": "log-grondtal",
+     "latex": "\\glog{g}(a) = \\frac{\\glog{p}(a)}{\\glog{p}(g)} = \\frac{\\ln(a)}{\\ln(g)}",
+     "spoken": "g-log a is p-log a gedeeld door p-log g, is ln a gedeeld door ln g",
+     "badge": "formulelijst",
+     "caption": "Grondtal veranderen (zo reken je het uit op de GR)",
+     "condition": "$g > 0$, $g \\neq 1$, $a > 0$, $p > 0$, $p \\neq 1$"
+    },
+    {
+     "type": "graph",
+     "graph": "logaritme"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Los op: $3 \\cdot 2^{x} = 96$.",
+     "steps": [
+      {
+       "text": "Deel door 3.",
+       "latex": "2^{x} = 32"
+      },
+      {
+       "text": "Herken de macht, of gebruik de logaritme.",
+       "latex": "x = \\glog{2}(32) = \\frac{\\ln(32)}{\\ln(2)} = 5"
+      }
+     ]
+    },
+    {
+     "type": "numworks",
+     "app": "Rekenen",
+     "steps": [
+      "Toets `log(x,a)` voor $\\glog{a}(x)$: het grondtal komt **achteraan**.",
+      "Of gebruik `ln(x)/ln(a)`."
+     ],
+     "note": "Let op de volgorde: `log(32,2)` is $\\glog{2}(32) = 5$."
+    },
+    {
+     "type": "heading",
+     "text": "Logaritmische schaalverdeling"
+    },
+    {
+     "type": "text",
+     "text": "Op een logaritmische as staat elke stap voor een **factor** (bijv. 10 keer zo groot). Exponentiële groei wordt dan een rechte lijn."
+    },
+    {
+     "type": "graph",
+     "graph": "logschaal"
+    }
+   ]
+  },
+  {
+   "id": "c1-sinus",
+   "title": "Sinusfunctie",
+   "summary": "Periodieke verschijnselen: evenwichtsstand, amplitude en periode.",
+   "syllabusRef": "C1.1",
+   "keywords": [
+    "sinus",
+    "periodiek",
+    "amplitude",
+    "periode",
+    "evenwichtsstand",
+    "sinusoide",
+    "golf"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "sin-formule",
+     "latex": "f(x) = a + b \\cdot \\sin\\left(c(x - d)\\right)",
+     "spoken": "f van x is a plus b keer sinus van c keer x min d",
+     "badge": "paraat",
+     "caption": "Algemene sinusfunctie",
+     "question": "Algemene vorm van een sinusfunctie?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "betekenis"
+     ],
+     "rows": [
+      [
+       "$a$",
+       "evenwichtsstand (middenlijn)"
+      ],
+      [
+       "$b$",
+       "amplitude (afstand tot de evenwichtsstand)"
+      ],
+      [
+       "$c$",
+       "bepaalt de periode: $\\frac{2\\pi}{c}$"
+      ],
+      [
+       "$d$",
+       "horizontale verschuiving"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "id": "sin-periode",
+     "latex": "\\text{periode} = \\frac{2\\pi}{c}",
+     "spoken": "periode is 2 pi gedeeld door c",
+     "badge": "paraat",
+     "caption": "Periode",
+     "question": "Hoe bereken je de periode van $a + b\\sin(c(x - d))$?"
+    },
+    {
+     "type": "formula",
+     "id": "sin-maxmin",
+     "latex": "\\text{max} = a + b \\qquad \\text{min} = a - b",
+     "spoken": "maximum is a plus b, minimum is a min b",
+     "badge": "paraat",
+     "caption": "Maximum en minimum",
+     "question": "Max en min van $a + b\\sin(\\ldots)$?"
+    },
+    {
+     "type": "graph",
+     "graph": "sinus"
+    },
+    {
+     "type": "warning",
+     "text": "Zet je rekenmachine op **radialen** (Instellingen → Hoekmaat → Radialen). In de formules van wiskunde A staat de hoek bijna altijd in radialen."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "De waterstand is $h(t) = 120 + 80 \\sin\\left(\\frac{2\\pi}{12,4}(t - 3)\\right)$ cm. Bepaal de periode, de hoogste stand en het eerste tijdstip daarvan.",
+     "steps": [
+      {
+       "text": "Hier is $c = \\frac{2\\pi}{12,4}$, dus:",
+       "latex": "\\text{periode} = \\frac{2\\pi}{c} = 12,4 \\text{ uur}"
+      },
+      {
+       "text": "Hoogste stand:",
+       "latex": "120 + 80 = 200 \\text{ cm}"
+      },
+      {
+       "text": "De sinus is maximaal een kwart periode na $t = d = 3$:",
+       "latex": "t = 3 + \\frac{12,4}{4} = 6,1 \\text{ uur}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-transformaties",
+   "title": "Verschuiven en herschalen",
+   "summary": "Wat er met de formule gebeurt als je de grafiek verschuift of uitrekt.",
+   "syllabusRef": "C2.5",
+   "keywords": [
+    "transformaties",
+    "verschuiven",
+    "herschalen",
+    "translatie",
+    "vermenigvuldigen",
+    "grafiek"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "wat je doet met de grafiek",
+      "wat er in de formule verandert"
+     ],
+     "rows": [
+      [
+       "$p$ naar rechts",
+       "$x$ wordt $x - p$"
+      ],
+      [
+       "$q$ omhoog",
+       "$+\\,q$ erachter"
+      ],
+      [
+       "$a$ keer uitrekken t.o.v. de $x$-as (verticaal)",
+       "vermenigvuldig de hele formule met $a$"
+      ],
+      [
+       "$c$ keer uitrekken t.o.v. de $y$-as (horizontaal)",
+       "$x$ wordt $\\frac{x}{c}$"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "id": "tr-algemeen",
+     "latex": "y = a \\cdot f\\left(\\frac{x - p}{c}\\right) + q",
+     "spoken": "y is a keer f van x min p gedeeld door c, plus q",
+     "badge": "paraat",
+     "caption": "Alles bij elkaar",
+     "question": "Hoe ziet de formule eruit na verschuiven en herschalen?"
+    },
+    {
+     "type": "graph",
+     "graph": "transformaties"
+    },
+    {
+     "type": "tip",
+     "text": "Let op het minteken: $f(x - 3)$ verschuift **naar rechts**, niet naar links."
+    }
+   ]
+  },
+  {
+   "id": "c2-vergelijkingen",
+   "title": "Vergelijkingen en ongelijkheden oplossen",
+   "summary": "Algebraïsch waar het kan, met de GR waar het moet.",
+   "syllabusRef": "C2.7",
+   "keywords": [
+    "vergelijking",
+    "ongelijkheid",
+    "oplossen",
+    "snijpunt",
+    "gr",
+    "numeriek",
+    "grafisch"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Bij wiskunde A mag je vergelijkingen bijna altijd met de **GR** oplossen. Alleen als er 'herleid' of 'los algebraïsch op' staat, moet het met de hand."
+    },
+    {
+     "type": "heading",
+     "text": "Met de GR"
+    },
+    {
+     "type": "text",
+     "text": "Los $f(x) = g(x)$ op door beide als functie in te voeren en het **snijpunt** te zoeken. Voor een ongelijkheid $f(x) < g(x)$: kijk links of rechts van het snijpunt welke grafiek lager ligt, en schrijf het antwoord als interval."
+    },
+    {
+     "type": "numworks",
+     "app": "Functies",
+     "steps": [
+      "Voer beide kanten in als `f(x)` en `g(x)`.",
+      "Stel bij **Grafiek** een venster in waarin het snijpunt zichtbaar is.",
+      "**Bereken** → **Snijpunt**."
+     ],
+     "note": "Of gebruik de app **Vergelijking**: typ de vergelijking en kies eventueel zelf een zoekinterval."
+    },
+    {
+     "type": "heading",
+     "text": "Oplossen door herleiden"
+    },
+    {
+     "type": "formula",
+     "id": "vgl-product",
+     "latex": "A \\cdot B = A \\cdot C \\;\\Leftrightarrow\\; B = C",
+     "spoken": "A keer B is A keer C, dus B is C",
+     "badge": "paraat",
+     "caption": "Delen door $A$ mag alleen als $A \\neq 0$",
+     "condition": "$A \\neq 0$"
+    },
+    {
+     "type": "formula",
+     "id": "vgl-breuk",
+     "latex": "\\frac{A}{B} = C \\;\\Leftrightarrow\\; A = B \\cdot C",
+     "spoken": "A over B is C, dus A is B keer C",
+     "badge": "paraat",
+     "caption": "Breuk wegwerken"
+    },
+    {
+     "type": "text",
+     "text": "Exponentiële en logaritmische vergelijkingen los je op met $g^x = a \\Leftrightarrow x = \\glog{g}(a)$; zie **Formules herleiden**."
+    },
+    {
+     "type": "heading",
+     "text": "Interpoleren en extrapoleren"
+    },
+    {
+     "type": "formula",
+     "id": "vgl-interpoleren",
+     "latex": "y \\approx y_1 + \\frac{x - x_1}{x_2 - x_1} \\cdot (y_2 - y_1)",
+     "spoken": "y is ongeveer y 1 plus x min x 1 gedeeld door x 2 min x 1, keer y 2 min y 1",
+     "badge": "paraat",
+     "caption": "Lineair interpoleren tussen twee tabelwaarden",
+     "question": "Hoe schat je lineair een waarde tussen twee punten in?"
+    },
+    {
+     "type": "text",
+     "text": "**Interpoleren** = schatten *tussen* bekende waarden, **extrapoleren** = *buiten* het bereik doortrekken. Extrapoleren is riskant: het model hoeft daar niet meer te kloppen."
+    }
+   ]
+  },
+  {
+   "id": "c2-samengesteld",
+   "title": "Functies combineren",
+   "summary": "Optellen, aftrekken, vermenigvuldigen, delen en samenstellen.",
+   "syllabusRef": "C2.10",
+   "keywords": [
+    "somfunctie",
+    "verschilfunctie",
+    "productfunctie",
+    "quotient",
+    "samenstellen",
+    "kettingfunctie"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "combinatie",
+      "formule",
+      "grafiek"
+     ],
+     "rows": [
+      [
+       "som",
+       "$f(x) + g(x)$",
+       "tel de $y$-waarden op"
+      ],
+      [
+       "verschil",
+       "$f(x) - g(x)$",
+       "trek de $y$-waarden af"
+      ],
+      [
+       "product",
+       "$f(x) \\cdot g(x)$",
+       "vermenigvuldig de $y$-waarden"
+      ],
+      [
+       "quotiënt",
+       "$\\frac{f(x)}{g(x)}$",
+       "deel de $y$-waarden"
+      ],
+      [
+       "samenstellen",
+       "$g(f(x))$",
+       "eerst $f$, dan $g$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Bij het **schetsen** van een somgrafiek: kijk naar een paar handige $x$-waarden en tel daar de $y$-waarden op. Waar $g(x) = 0$ is, geldt $(f + g)(x) = f(x)$."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Gegeven $f(x) = 2x$ en $g(x) = x^2 + 1$. Bereken $g(f(3))$ en $f(g(3))$.",
+     "steps": [
+      {
+       "text": "Eerst $f(3) = 6$, daarna $g(6)$:",
+       "latex": "g(f(3)) = 6^2 + 1 = 37"
+      },
+      {
+       "text": "Eerst $g(3) = 10$, daarna $f(10)$:",
+       "latex": "f(g(3)) = 2 \\cdot 10 = 20"
+      },
+      {
+       "text": "De volgorde maakt dus uit."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Kwalitatief redeneren"
+    },
+    {
+     "type": "text",
+     "text": "Bij een formule met meerdere variabelen, zoals $R = \\frac{k \\cdot A}{d^2}$: kijk per variabele wat er gebeurt als die groter wordt en de rest gelijk blijft. Staat de variabele in de **teller**, dan wordt $R$ groter; in de **noemer** kleiner."
+    }
+   ]
+  }
+ ]
+}

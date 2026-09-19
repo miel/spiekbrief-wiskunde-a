@@ -1,0 +1,682 @@
+{
+ "id": "B",
+ "code": "B",
+ "title": "Algebra en tellen",
+ "symbol": "plus.forwardslash.minus",
+ "color": "blue",
+ "topics": [
+  {
+   "id": "b1-machten",
+   "title": "Machten en wortels",
+   "summary": "Rekenregels voor machten en wortels (bijlage 4, D1–D6 en B).",
+   "syllabusRef": "B1.1",
+   "keywords": [
+    "machten",
+    "exponent",
+    "wortel",
+    "rekenregels",
+    "gebroken exponent",
+    "negatieve exponent"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Deze regels staan **niet** op de formulelijst. Ze gelden voor $a > 0$ en $b > 0$."
+    },
+    {
+     "type": "formula",
+     "id": "mac-prod",
+     "latex": "a^p \\cdot a^q = a^{p+q}",
+     "spoken": "a tot de p keer a tot de q is a tot de p plus q",
+     "badge": "paraat",
+     "caption": "Vermenigvuldigen: exponenten optellen",
+     "question": "$a^p \\cdot a^q$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-quot",
+     "latex": "\\frac{a^p}{a^q} = a^{p-q}",
+     "spoken": "a tot de p gedeeld door a tot de q is a tot de p min q",
+     "badge": "paraat",
+     "caption": "Delen: exponenten aftrekken",
+     "question": "$\\frac{a^p}{a^q}$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-macht",
+     "latex": "\\left(a^p\\right)^q = a^{p \\cdot q}",
+     "spoken": "a tot de p, alles tot de q, is a tot de p keer q",
+     "badge": "paraat",
+     "caption": "Macht van een macht: vermenigvuldigen",
+     "question": "$\\left(a^p\\right)^q$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-product",
+     "latex": "(a \\cdot b)^p = a^p \\cdot b^p",
+     "spoken": "a keer b tot de p is a tot de p keer b tot de p",
+     "badge": "paraat",
+     "caption": "Macht van een product",
+     "question": "$(a \\cdot b)^p$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-neg",
+     "latex": "a^{-p} = \\frac{1}{a^p}",
+     "spoken": "a tot de min p is 1 gedeeld door a tot de p",
+     "badge": "paraat",
+     "caption": "Negatieve exponent",
+     "question": "$a^{-p}$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-wortel",
+     "latex": "a^{\\frac{1}{p}} = \\sqrt[p]{a}",
+     "spoken": "a tot de 1 p-de is de p-de machtswortel van a",
+     "badge": "paraat",
+     "caption": "Gebroken exponent ($p$ positief en geheel)",
+     "question": "$a^{\\frac{1}{p}}$ = ?"
+    },
+    {
+     "type": "formula",
+     "id": "mac-nul",
+     "latex": "a^0 = 1 \\qquad a^1 = a",
+     "spoken": "a tot de nul is 1, a tot de 1 is a",
+     "badge": "paraat",
+     "caption": "Speciale exponenten"
+    },
+    {
+     "type": "heading",
+     "text": "Wortels"
+    },
+    {
+     "type": "formula",
+     "id": "wor-prod",
+     "latex": "\\sqrt{A} \\cdot \\sqrt{B} = \\sqrt{A \\cdot B}",
+     "spoken": "wortel A keer wortel B is wortel A keer B",
+     "badge": "paraat",
+     "caption": "Wortels vermenigvuldigen"
+    },
+    {
+     "type": "formula",
+     "id": "wor-quot",
+     "latex": "\\frac{\\sqrt{A}}{\\sqrt{B}} = \\sqrt{\\frac{A}{B}}",
+     "spoken": "wortel A gedeeld door wortel B is wortel van A gedeeld door B",
+     "badge": "paraat",
+     "caption": "Wortels delen"
+    },
+    {
+     "type": "formula",
+     "id": "wor-macht",
+     "latex": "\\sqrt{x} = x^{0,5} \\qquad \\frac{1}{\\sqrt{x}} = x^{-0,5}",
+     "spoken": "wortel x is x tot de 0,5, 1 gedeeld door wortel x is x tot de min 0,5",
+     "badge": "paraat",
+     "caption": "Wortel als macht (handig bij differentiëren)",
+     "question": "Schrijf $\\frac{1}{\\sqrt{x}}$ als macht van $x$"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Schrijf $\\frac{8x^3}{(2x)^2}$ zo eenvoudig mogelijk.",
+     "steps": [
+      {
+       "text": "Werk eerst de macht van het product uit: $(2x)^2 = 2^2 \\cdot x^2 = 4x^2$."
+      },
+      {
+       "text": "Deel getallen en machten apart.",
+       "latex": "\\frac{8x^3}{4x^2} = \\frac{8}{4} \\cdot x^{3-2}"
+      },
+      {
+       "text": "Dus:",
+       "latex": "\\frac{8x^3}{(2x)^2} = 2x"
+      }
+     ]
+    },
+    {
+     "type": "warning",
+     "text": "$(a + b)^2 \\neq a^2 + b^2$ en $\\sqrt{a + b} \\neq \\sqrt{a} + \\sqrt{b}$. De regels gelden alleen voor **vermenigvuldigen** en **delen**."
+    }
+   ]
+  },
+  {
+   "id": "b1-breuken",
+   "title": "Breuken en haakjes",
+   "summary": "Rekenen met breuken en haakjes wegwerken (bijlage 4, A en C).",
+   "syllabusRef": "B1.3",
+   "keywords": [
+    "breuken",
+    "haakjes",
+    "noemer",
+    "gelijknamig",
+    "haakjes wegwerken",
+    "bijzondere producten"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "br-optellen",
+     "latex": "\\frac{A}{B} + \\frac{C}{D} = \\frac{AD + BC}{BD}",
+     "spoken": "A over B plus C over D is A D plus B C over B D",
+     "badge": "paraat",
+     "caption": "Optellen: eerst gelijknamig maken"
+    },
+    {
+     "type": "formula",
+     "id": "br-splitsen",
+     "latex": "\\frac{A + B}{C} = \\frac{A}{C} + \\frac{B}{C}",
+     "spoken": "A plus B over C is A over C plus B over C",
+     "badge": "paraat",
+     "caption": "Breuk splitsen (alleen bij de teller!)"
+    },
+    {
+     "type": "formula",
+     "id": "br-keer-getal",
+     "latex": "A \\cdot \\frac{B}{C} = \\frac{A \\cdot B}{C}",
+     "spoken": "A keer B over C is A B over C",
+     "badge": "paraat",
+     "caption": "Breuk keer een getal"
+    },
+    {
+     "type": "formula",
+     "id": "br-keer",
+     "latex": "\\frac{A}{B} \\cdot \\frac{C}{D} = \\frac{A \\cdot C}{B \\cdot D}",
+     "spoken": "A over B keer C over D is A C over B D",
+     "badge": "paraat",
+     "caption": "Breuken vermenigvuldigen"
+    },
+    {
+     "type": "formula",
+     "id": "br-delen",
+     "latex": "\\frac{A}{\\frac{B}{C}} = \\frac{A \\cdot C}{B}",
+     "spoken": "A gedeeld door B over C is A C over B",
+     "badge": "paraat",
+     "caption": "Delen door een breuk: vermenigvuldigen met het omgekeerde"
+    },
+    {
+     "type": "warning",
+     "text": "$\\frac{A}{B + C} \\neq \\frac{A}{B} + \\frac{A}{C}$. Splitsen mag alleen als de **teller** een som is."
+    },
+    {
+     "type": "heading",
+     "text": "Haakjes wegwerken"
+    },
+    {
+     "type": "formula",
+     "id": "hk-dubbel",
+     "latex": "(A + B)(C + D) = AC + AD + BC + BD",
+     "spoken": "A plus B keer C plus D is A C plus A D plus B C plus B D",
+     "badge": "paraat",
+     "caption": "Dubbele haakjes: iedere term met iedere term"
+    },
+    {
+     "type": "formula",
+     "id": "hk-xab",
+     "latex": "(x + a)(x + b) = x^2 + (a + b)x + ab",
+     "spoken": "x plus a keer x plus b is x kwadraat plus a plus b keer x plus a b",
+     "badge": "paraat",
+     "caption": "Bijzonder product"
+    },
+    {
+     "type": "formula",
+     "id": "hk-kwadraat",
+     "latex": "(A + B)^2 = A^2 + 2AB + B^2",
+     "spoken": "A plus B in het kwadraat is A kwadraat plus 2 A B plus B kwadraat",
+     "badge": "extra",
+     "caption": "Kwadraat van een som"
+    },
+    {
+     "type": "text",
+     "text": "Bij wiskunde A hoef je alleen haakjes **weg te werken**; ontbinden in factoren wordt niet gevraagd."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Werk de haakjes weg: $(2x - 3)(x + 4)$.",
+     "steps": [
+      {
+       "text": "Vermenigvuldig iedere term met iedere term.",
+       "latex": "2x \\cdot x + 2x \\cdot 4 - 3 \\cdot x - 3 \\cdot 4"
+      },
+      {
+       "text": "Tel gelijksoortige termen op.",
+       "latex": "2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1-procenten",
+   "title": "Procenten, verhoudingen en groeifactor",
+   "summary": "Absoluut en relatief, procentuele verandering en groeifactoren.",
+   "syllabusRef": "B1.2",
+   "keywords": [
+    "procent",
+    "percentage",
+    "groeifactor",
+    "relatief",
+    "absoluut",
+    "verhouding",
+    "procentpunt",
+    "toename"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "**Absoluut** is het aantal zelf (bijv. 300 leerlingen). **Relatief** is een deel van het geheel (bijv. 25 % van de leerlingen)."
+    },
+    {
+     "type": "formula",
+     "id": "pct-verandering",
+     "latex": "\\text{procentuele verandering} = \\frac{\\text{nieuw} - \\text{oud}}{\\text{oud}} \\cdot 100\\pct",
+     "spoken": "procentuele verandering is nieuw min oud gedeeld door oud, keer 100 procent",
+     "badge": "paraat",
+     "caption": "Procentuele toename of afname",
+     "question": "Hoe bereken je de procentuele verandering?"
+    },
+    {
+     "type": "formula",
+     "id": "pct-groeifactor",
+     "latex": "g = 1 + \\frac{p}{100}",
+     "spoken": "groeifactor g is 1 plus p gedeeld door 100",
+     "badge": "paraat",
+     "caption": "Groeifactor bij een toename van $p\\pct$",
+     "question": "Groeifactor bij een toename van $p\\pct$?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "verandering",
+      "groeifactor"
+     ],
+     "rows": [
+      [
+       "$+8\\pct$",
+       "$1,08$"
+      ],
+      [
+       "$-8\\pct$",
+       "$0,92$"
+      ],
+      [
+       "$+150\\pct$",
+       "$2,5$"
+      ],
+      [
+       "$-100\\pct$",
+       "$0$"
+      ]
+     ],
+     "caption": "Voorbeelden"
+    },
+    {
+     "type": "tip",
+     "text": "Opeenvolgende veranderingen: **vermenigvuldig** de groeifactoren. $+10\\pct$ en daarna $-10\\pct$ geeft $1,1 \\cdot 0,9 = 0,99$, dus $-1\\pct$."
+    },
+    {
+     "type": "text",
+     "text": "**Procentpunt**: het verschil tussen twee percentages. Van 20 % naar 25 % is een stijging van **5 procentpunt**, en tegelijk een **relatieve** stijging van 25 % (want $\\frac{25 - 20}{20} = 0,25$)."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Een fiets kost na $15\\pct$ korting € 425. Wat was de oorspronkelijke prijs?",
+     "steps": [
+      {
+       "text": "Korting van $15\\pct$ betekent groeifactor $0,85$.",
+       "latex": "0,85 \\cdot \\text{oud} = 425"
+      },
+      {
+       "text": "Deel door de groeifactor.",
+       "latex": "\\text{oud} = \\frac{425}{0,85} = 500"
+      },
+      {
+       "text": "De fiets kostte € 500."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1-eenheden",
+   "title": "Grootheden en eenheden",
+   "summary": "Samengestelde grootheden en eenheden omrekenen.",
+   "syllabusRef": "B1.6",
+   "keywords": [
+    "eenheden",
+    "omrekenen",
+    "grootheden",
+    "snelheid",
+    "dichtheid",
+    "km/h",
+    "m/s",
+    "liter"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "van",
+      "naar",
+      "reken"
+     ],
+     "rows": [
+      [
+       "km/h",
+       "m/s",
+       "$: 3,6$"
+      ],
+      [
+       "m/s",
+       "km/h",
+       "$\\cdot 3,6$"
+      ],
+      [
+       "m²",
+       "cm²",
+       "$\\cdot 10\\,000$"
+      ],
+      [
+       "m³",
+       "dm³ = liter",
+       "$\\cdot 1000$"
+      ],
+      [
+       "uur",
+       "minuten",
+       "$\\cdot 60$"
+      ],
+      [
+       "dag",
+       "uur",
+       "$\\cdot 24$"
+      ]
+     ],
+     "caption": "Veelgebruikte omrekeningen"
+    },
+    {
+     "type": "formula",
+     "id": "eh-snelheid",
+     "latex": "\\text{snelheid} = \\frac{\\text{afstand}}{\\text{tijd}}",
+     "spoken": "snelheid is afstand gedeeld door tijd",
+     "badge": "paraat",
+     "caption": "Samengestelde grootheid"
+    },
+    {
+     "type": "tip",
+     "text": "Reken eenheden mee als een breuk: $\\frac{\\text{km}}{\\text{h}} = \\frac{1000 \\text{ m}}{3600 \\text{ s}}$. Zo zie je meteen of je moet vermenigvuldigen of delen."
+    },
+    {
+     "type": "tip",
+     "text": "Kijk bij formules uit de context altijd in welke eenheid de variabelen staan (bijv. $t$ in jaren vanaf 2020)."
+    }
+   ]
+  },
+  {
+   "id": "b1-herleiden",
+   "title": "Formules herleiden",
+   "summary": "Een formule omwerken naar de gevraagde vorm, zonder GR (bijlage 4, G en H).",
+   "syllabusRef": "C2.2",
+   "keywords": [
+    "herleiden",
+    "omwerken",
+    "formule",
+    "vrijmaken",
+    "vergelijking",
+    "balansmethode"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "**Herleiden** betekent: stap voor stap herschrijven tot de gevraagde vorm, **zonder** opties van de GR. Laat iedere stap zien."
+    },
+    {
+     "type": "formula",
+     "id": "hl-lineair",
+     "latex": "ax + b = c \\Leftrightarrow x = \\frac{c - b}{a}",
+     "spoken": "a x plus b is c, dus x is c min b gedeeld door a",
+     "badge": "paraat",
+     "caption": "Eerstegraads"
+    },
+    {
+     "type": "formula",
+     "id": "hl-breuk",
+     "latex": "\\frac{A}{B} = C \\Leftrightarrow A = B \\cdot C",
+     "spoken": "A over B is C, dus A is B keer C",
+     "badge": "paraat",
+     "caption": "Breuk wegwerken"
+    },
+    {
+     "type": "formula",
+     "id": "hl-kruislings",
+     "latex": "\\frac{A}{B} = \\frac{C}{D} \\Leftrightarrow A \\cdot D = B \\cdot C",
+     "spoken": "A over B is C over D, dus A D is B C",
+     "badge": "paraat",
+     "caption": "Kruislings vermenigvuldigen"
+    },
+    {
+     "type": "formula",
+     "id": "hl-wortel",
+     "latex": "\\sqrt{A} = B \\Leftrightarrow A = B^2",
+     "spoken": "wortel A is B, dus A is B kwadraat",
+     "badge": "paraat",
+     "caption": "Wortel wegwerken ($B \\geq 0$)"
+    },
+    {
+     "type": "formula",
+     "id": "hl-macht",
+     "latex": "x^n = c \\Leftrightarrow x = c^{\\frac{1}{n}}",
+     "spoken": "x tot de n is c, dus x is c tot de 1 n-de",
+     "badge": "paraat",
+     "caption": "Macht wegwerken ($x > 0$)",
+     "question": "Maak $x$ vrij: $x^n = c$ (met $x > 0$)"
+    },
+    {
+     "type": "formula",
+     "id": "hl-exp",
+     "latex": "g^x = a \\Leftrightarrow x = \\glog{g}(a)",
+     "spoken": "g tot de x is a, dus x is g-log a",
+     "badge": "paraat",
+     "caption": "Exponent vrijmaken",
+     "question": "Maak $x$ vrij: $g^x = a$"
+    },
+    {
+     "type": "formula",
+     "id": "hl-log",
+     "latex": "\\glog{g}(x) = b \\Leftrightarrow x = g^b",
+     "spoken": "g-log x is b, dus x is g tot de b",
+     "badge": "paraat",
+     "caption": "Logaritme wegwerken",
+     "question": "Maak $x$ vrij: $\\glog{g}(x) = b$"
+    },
+    {
+     "type": "formula",
+     "id": "hl-e",
+     "latex": "e^x = a \\Leftrightarrow x = \\ln(a)",
+     "spoken": "e tot de x is a, dus x is ln a",
+     "badge": "paraat",
+     "caption": "Met $e$",
+     "question": "Maak $x$ vrij: $e^x = a$"
+    },
+    {
+     "type": "formula",
+     "id": "hl-ln",
+     "latex": "\\ln(x) = b \\Leftrightarrow x = e^b",
+     "spoken": "ln x is b, dus x is e tot de b",
+     "badge": "paraat",
+     "caption": "Met ln",
+     "question": "Maak $x$ vrij: $\\ln(x) = b$"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Gegeven $N = 20 \\cdot 1,5^t$. Herleid tot een formule van de vorm $t = \\ldots$",
+     "steps": [
+      {
+       "text": "Deel beide kanten door 20.",
+       "latex": "1,5^t = \\frac{N}{20}"
+      },
+      {
+       "text": "Gebruik de definitie van de logaritme.",
+       "latex": "t = \\glog{1,5}\\left(\\frac{N}{20}\\right)"
+      }
+     ]
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Herleid $y = \\frac{12}{x + 3}$ tot $x = \\ldots$",
+     "steps": [
+      {
+       "text": "Vermenigvuldig met $x + 3$.",
+       "latex": "y(x + 3) = 12"
+      },
+      {
+       "text": "Deel door $y$.",
+       "latex": "x + 3 = \\frac{12}{y}"
+      },
+      {
+       "text": "Trek 3 af.",
+       "latex": "x = \\frac{12}{y} - 3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b2-tellen",
+   "title": "Telproblemen",
+   "summary": "Boomdiagram, wegendiagram, rooster, permutaties en combinaties.",
+   "syllabusRef": "B2.1",
+   "keywords": [
+    "tellen",
+    "combinatoriek",
+    "permutaties",
+    "combinaties",
+    "faculteit",
+    "boomdiagram",
+    "wegendiagram",
+    "rooster",
+    "volgorde"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Schematiseer eerst: **boomdiagram**, **wegendiagram** of **rooster**. Kies daarna de goede telregel."
+    },
+    {
+     "type": "formula",
+     "id": "tel-product",
+     "latex": "\\text{aantal} = n_1 \\cdot n_2 \\cdot \\ldots \\cdot n_k",
+     "spoken": "aantal is n 1 keer n 2 keer enzovoort",
+     "badge": "paraat",
+     "caption": "Vermenigvuldigingsregel: keuzes na elkaar",
+     "question": "Hoe tel je keuzes die na elkaar gemaakt worden?"
+    },
+    {
+     "type": "formula",
+     "id": "tel-herhaling",
+     "latex": "n^k",
+     "spoken": "n tot de k",
+     "badge": "paraat",
+     "caption": "Volgorde belangrijk, herhaling toegestaan ($k$ keer kiezen uit $n$)",
+     "question": "Aantal mogelijkheden: $k$ keer kiezen uit $n$, **met** herhaling, volgorde belangrijk?"
+    },
+    {
+     "type": "formula",
+     "id": "tel-faculteit",
+     "latex": "n! = n \\cdot (n - 1) \\cdot \\ldots \\cdot 2 \\cdot 1",
+     "spoken": "n faculteit is n keer n min 1 keer enzovoort tot 1",
+     "badge": "paraat",
+     "caption": "Alle $n$ dingen op een rij zetten",
+     "question": "Op hoeveel manieren zet je $n$ verschillende dingen op een rij?"
+    },
+    {
+     "type": "formula",
+     "id": "tel-permutaties",
+     "latex": "\\frac{n!}{(n - k)!} = n \\cdot (n - 1) \\cdot \\ldots \\cdot (n - k + 1)",
+     "spoken": "n faculteit gedeeld door n min k faculteit",
+     "badge": "paraat",
+     "caption": "Permutaties: $k$ uit $n$, volgorde **wel** belangrijk",
+     "question": "Aantal permutaties van $k$ uit $n$ (volgorde belangrijk, zonder herhaling)?"
+    },
+    {
+     "type": "formula",
+     "id": "tel-combinaties",
+     "latex": "\\binom{n}{k} = \\frac{n!}{k! \\cdot (n - k)!}",
+     "spoken": "n boven k is n faculteit gedeeld door k faculteit keer n min k faculteit",
+     "badge": "paraat",
+     "caption": "Combinaties: $k$ uit $n$, volgorde **niet** belangrijk",
+     "question": "Aantal combinaties van $k$ uit $n$ (volgorde niet belangrijk)?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "volgorde belangrijk",
+      "volgorde niet belangrijk"
+     ],
+     "rows": [
+      [
+       "met herhaling",
+       "$n^k$",
+       "(komt niet voor)"
+      ],
+      [
+       "zonder herhaling",
+       "$\\frac{n!}{(n-k)!}$",
+       "$\\binom{n}{k}$"
+      ]
+     ],
+     "caption": "Welke telregel?"
+    },
+    {
+     "type": "heading",
+     "text": "Rooster en rangschikken"
+    },
+    {
+     "type": "formula",
+     "id": "tel-rooster",
+     "latex": "\\binom{a + b}{a}",
+     "spoken": "a plus b boven a",
+     "badge": "paraat",
+     "caption": "Kortste routes in een rooster: $a$ stappen naar rechts en $b$ omhoog",
+     "question": "Aantal kortste routes in een rooster met $a$ stappen rechts en $b$ stappen omhoog?"
+    },
+    {
+     "type": "text",
+     "text": "Dezelfde formule telt rijtjes met $a$ gelijke en $b$ andere gelijke dingen, bijv. het aantal rijtjes van 5 letters met 2 keer A en 3 keer B: $\\binom{5}{2} = 10$."
+    },
+    {
+     "type": "text",
+     "text": "**Wegendiagram**: vermenigvuldig langs één route, tel verschillende routes op."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Uit een klas van 25 leerlingen worden een voorzitter, een secretaris en een penningmeester gekozen. Hoeveel mogelijkheden zijn er? En als er alleen een commissie van 3 wordt gekozen?",
+     "steps": [
+      {
+       "text": "Functies zijn verschillend: volgorde is belangrijk. Permutaties:",
+       "latex": "25 \\cdot 24 \\cdot 23 = 13\\,800"
+      },
+      {
+       "text": "Commissie zonder functies: volgorde niet belangrijk. Combinaties:",
+       "latex": "\\binom{25}{3} = 2300"
+      }
+     ]
+    },
+    {
+     "type": "numworks",
+     "app": "Rekenen",
+     "steps": [
+      "Toolbox-toets → **Kansrekenen** → **Combinatoriek**.",
+      "Kies **Combinatie** voor `binomial(n,k)`, **Permutatie** voor `permute(n,k)`.",
+      "Faculteit: `n!` staat in hetzelfde menu."
+     ],
+     "note": "Voorbeeld: binomial(25,3) = 2300 en permute(25,3) = 13800."
+    }
+   ]
+  }
+ ]
+}

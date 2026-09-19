@@ -1,0 +1,73 @@
+name: Spiekbrief
+options:
+  bundleIdPrefix: nl.spiekbrief
+  deploymentTarget:
+    iOS: "18.0"
+  developmentLanguage: nl
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+packages:
+  SwiftMath:
+    url: https://github.com/mgriebling/SwiftMath
+    from: "1.7.3"
+
+targets:
+  Spiekbrief:
+    type: application
+    platform: iOS
+    sources:
+      - path: Spiekbrief
+        excludes:
+          - Info.plist
+    dependencies:
+      - package: SwiftMath
+    info:
+      path: Spiekbrief/Info.plist
+      properties:
+        CFBundleDisplayName: Spiekbrief
+        CFBundleDevelopmentRegion: nl
+        LSApplicationCategoryType: public.app-category.education
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.spiekbrief.wiskunde-a
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        GENERATE_INFOPLIST_FILE: NO
+
+  SpiekbriefTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SpiekbriefTests
+    dependencies:
+      - target: Spiekbrief
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Spiekbrief.app/Spiekbrief
+
+schemes:
+  Spiekbrief:
+    build:
+      targets:
+        Spiekbrief: all
+        SpiekbriefTests: [test]
+    test:
+      targets:
+        - SpiekbriefTests

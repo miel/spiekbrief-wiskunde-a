@@ -1,0 +1,592 @@
+{
+ "id": "D",
+ "code": "D",
+ "title": "Verandering",
+ "symbol": "chart.line.uptrend.xyaxis",
+ "color": "orange",
+ "topics": [
+  {
+   "id": "d1-rijen",
+   "title": "Rijen: rekenkundig en meetkundig",
+   "summary": "Directe en recursieve formules, en de rij van verschillen.",
+   "syllabusRef": "D1.1",
+   "keywords": [
+    "rijen",
+    "rekenkundig",
+    "meetkundig",
+    "recursief",
+    "directe formule",
+    "verschil",
+    "reden"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Notatie: $u_n$ of $u(n)$ is de term met nummer $n$. Let op waar de rij begint: bij $n = 0$ of bij $n = 1$."
+    },
+    {
+     "type": "heading",
+     "text": "Rekenkundige rij"
+    },
+    {
+     "type": "text",
+     "text": "Bij elke stap komt er **hetzelfde getal bij** (het verschil $v$)."
+    },
+    {
+     "type": "formula",
+     "id": "rij-rek-direct",
+     "latex": "u_n = u_0 + n \\cdot v",
+     "spoken": "u n is u 0 plus n keer v",
+     "badge": "paraat",
+     "caption": "Directe formule",
+     "question": "Directe formule van een rekenkundige rij (start bij $n = 0$)?"
+    },
+    {
+     "type": "formula",
+     "id": "rij-rek-rec",
+     "latex": "u_n = u_{n-1} + v \\quad\\text{met}\\quad u_0 = \\ldots",
+     "spoken": "u n is u n min 1 plus v, met u 0 gegeven",
+     "badge": "paraat",
+     "caption": "Recursieve formule",
+     "question": "Recursieve formule van een rekenkundige rij?"
+    },
+    {
+     "type": "heading",
+     "text": "Meetkundige rij"
+    },
+    {
+     "type": "text",
+     "text": "Bij elke stap wordt er met **hetzelfde getal vermenigvuldigd** (de reden $r$)."
+    },
+    {
+     "type": "formula",
+     "id": "rij-mk-direct",
+     "latex": "u_n = u_0 \\cdot r^{\\,n}",
+     "spoken": "u n is u 0 keer r tot de n",
+     "badge": "paraat",
+     "caption": "Directe formule",
+     "question": "Directe formule van een meetkundige rij (start bij $n = 0$)?"
+    },
+    {
+     "type": "formula",
+     "id": "rij-mk-rec",
+     "latex": "u_n = r \\cdot u_{n-1} \\quad\\text{met}\\quad u_0 = \\ldots",
+     "spoken": "u n is r keer u n min 1, met u 0 gegeven",
+     "badge": "paraat",
+     "caption": "Recursieve formule",
+     "question": "Recursieve formule van een meetkundige rij?"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "hoe herken je het?",
+      "rekenkundig",
+      "meetkundig"
+     ],
+     "rows": [
+      [
+       "verschil $u_n - u_{n-1}$",
+       "constant",
+       "niet constant"
+      ],
+      [
+       "quotiënt $\\frac{u_n}{u_{n-1}}$",
+       "niet constant",
+       "constant"
+      ],
+      [
+       "grafiek",
+       "punten op een rechte lijn",
+       "exponentieel"
+      ]
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "Rij van verschillen"
+    },
+    {
+     "type": "text",
+     "text": "De rij van verschillen van een **rekenkundige** rij is constant. De rij van verschillen van een **meetkundige** rij is zelf weer meetkundig, met dezelfde reden $r$."
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Gegeven de rij $5, 8, 11, 14, \\ldots$ Stel een directe formule op en bereken $u_{20}$.",
+     "steps": [
+      {
+       "text": "De verschillen zijn steeds 3: rekenkundig.",
+       "latex": "u_n = 5 + 3n \\quad (n = 0, 1, 2, \\ldots)"
+      },
+      {
+       "text": "Vul in:",
+       "latex": "u_{20} = 5 + 3 \\cdot 20 = 65"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d1-recursief",
+   "title": "Recursieve formules in een context",
+   "summary": "Doorrekenen met een recursieve formule, en grenswaarden.",
+   "syllabusRef": "D1.7",
+   "keywords": [
+    "recursief",
+    "doorrekenen",
+    "grenswaarde",
+    "model",
+    "somrij",
+    "sigma"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Veel modellen combineren vermenigvuldigen en optellen, bijvoorbeeld een medicijn dat voor $80\\pct$ in het bloed blijft en waar elke dag 50 mg bij komt:"
+    },
+    {
+     "type": "formula",
+     "id": "rec-model",
+     "latex": "u_n = 0,8 \\cdot u_{n-1} + 50",
+     "spoken": "u n is 0,8 keer u n min 1 plus 50",
+     "badge": "extra",
+     "caption": "Voorbeeld van een recursief model"
+    },
+    {
+     "type": "formula",
+     "id": "rec-grens",
+     "latex": "u = r \\cdot u + b \\;\\Leftrightarrow\\; u = \\frac{b}{1 - r}",
+     "spoken": "u is r keer u plus b, dus u is b gedeeld door 1 min r",
+     "badge": "extra",
+     "caption": "Grenswaarde bij $|r| < 1$: vul $u_n = u_{n-1} = u$ in",
+     "question": "Hoe bereken je de grenswaarde van $u_n = r \\cdot u_{n-1} + b$?"
+    },
+    {
+     "type": "graph",
+     "graph": "rij-recursief"
+    },
+    {
+     "type": "heading",
+     "text": "Somrij"
+    },
+    {
+     "type": "text",
+     "text": "De **somrij** telt de termen op: $S_n = u_0 + u_1 + \\ldots + u_n$."
+    },
+    {
+     "type": "formula",
+     "id": "rec-sigma",
+     "latex": "S_n = \\sum_{k=0}^{n} u_k",
+     "spoken": "S n is de som van k is 0 tot n van u k",
+     "badge": "paraat",
+     "caption": "Sigmanotatie: tel $u_k$ op voor $k = 0$ tot en met $n$",
+     "question": "Wat betekent $\\sum_{k=0}^{n} u_k$?"
+    },
+    {
+     "type": "formula",
+     "id": "rec-som-rek",
+     "latex": "S = \\text{aantal termen} \\cdot \\frac{\\text{eerste} + \\text{laatste}}{2}",
+     "spoken": "S is aantal termen keer eerste plus laatste gedeeld door 2",
+     "badge": "extra",
+     "caption": "Som van een rekenkundige rij"
+    },
+    {
+     "type": "formula",
+     "id": "rec-som-mk",
+     "latex": "S_n = u_0 \\cdot \\frac{r^{\\,n+1} - 1}{r - 1}",
+     "spoken": "S n is u 0 keer r tot de n plus 1 min 1, gedeeld door r min 1",
+     "badge": "extra",
+     "caption": "Som van een meetkundige rij ($r \\neq 1$)"
+    },
+    {
+     "type": "numworks",
+     "app": "Rijen",
+     "steps": [
+      "Kies **Rij toevoegen** en daarna **Recursief eerste orde** voor $u_{n+1} = \\ldots$, of **Directe formule**.",
+      "Vul de beginwaarde in bij $u_0$ (of $u_1$).",
+      "In **Tabel** lees je de termen af; bij **Grafiek** → **Bereken** staat ook **Som van termen**."
+     ],
+     "note": "De somrij kun je ook laten weergeven met de optie **Weergeven van de somrij**."
+    }
+   ]
+  },
+  {
+   "id": "d2-helling",
+   "title": "Differentiequotiënt en helling",
+   "summary": "Gemiddelde verandering, toenamediagram en de helling in een punt.",
+   "syllabusRef": "D2.1",
+   "keywords": [
+    "differentiequotient",
+    "gemiddelde verandering",
+    "toenamediagram",
+    "helling",
+    "hellinggrafiek",
+    "raaklijn",
+    "stijgen"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "hel-dq",
+     "latex": "\\frac{\\Delta y}{\\Delta x} = \\frac{f(b) - f(a)}{b - a}",
+     "spoken": "delta y gedeeld door delta x is f van b min f van a, gedeeld door b min a",
+     "badge": "paraat",
+     "caption": "Differentiequotiënt op $[a, b]$ = gemiddelde verandering",
+     "question": "Formule voor het differentiequotiënt op $[a, b]$?"
+    },
+    {
+     "type": "text",
+     "text": "Het differentiequotiënt is de **richtingscoëfficiënt van de lijn door de twee punten**. Vertel er altijd de eenheid bij, bijv. 'gemiddeld 2,5 graden per uur'."
+    },
+    {
+     "type": "heading",
+     "text": "Toenemend of afnemend"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "betekenis"
+     ],
+     "rows": [
+      [
+       "toenemend stijgend",
+       "stijgt, en steeds sneller"
+      ],
+      [
+       "afnemend stijgend",
+       "stijgt, maar steeds langzamer"
+      ],
+      [
+       "toenemend dalend",
+       "daalt, en steeds sneller"
+      ],
+      [
+       "afnemend dalend",
+       "daalt, maar steeds langzamer"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "In een **toenamediagram** staan de toenames per interval als staafjes. Hogere staafjes betekenen een steilere grafiek."
+    },
+    {
+     "type": "graph",
+     "graph": "toenamediagram"
+    },
+    {
+     "type": "heading",
+     "text": "Helling in een punt"
+    },
+    {
+     "type": "text",
+     "text": "De helling in één punt is de richtingscoëfficiënt van de **raaklijn** in dat punt. Dat is precies de afgeleide: $f'(a)$."
+    },
+    {
+     "type": "graph",
+     "graph": "raaklijn"
+    },
+    {
+     "type": "text",
+     "text": "Een **hellinggrafiek** is de grafiek van de helling: waar $f$ een top heeft, is de hellinggrafiek $0$; waar $f$ stijgt, ligt de hellinggrafiek boven de $x$-as."
+    },
+    {
+     "type": "graph",
+     "graph": "hellinggrafiek"
+    },
+    {
+     "type": "numworks",
+     "app": "Functies",
+     "steps": [
+      "Voer de functie in en ga naar **Grafiek**.",
+      "**Bereken** → **Raaklijn** tekent de raaklijn en geeft de helling.",
+      "In de app **Rekenen** geeft `diff(f(x),x,a)` de afgeleide in $x = a$ (toolbox → **Differentiaalrekening** → **Afgeleide**)."
+     ]
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Van $N(t) = 200 \\cdot 1,08^{\\,t}$ (aantal na $t$ jaar). Bereken de gemiddelde toename per jaar op $[0, 10]$.",
+     "steps": [
+      {
+       "text": "Bereken de twee functiewaarden.",
+       "latex": "N(0) = 200 \\quad\\text{en}\\quad N(10) \\approx 431,8"
+      },
+      {
+       "text": "Differentiequotiënt:",
+       "latex": "\\frac{431,8 - 200}{10 - 0} \\approx 23,2"
+      },
+      {
+       "text": "Gemiddeld ongeveer 23 erbij per jaar."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d3-afgeleide",
+   "title": "Afgeleide: de rekenregels",
+   "summary": "Standaardafgeleiden (paraat) en de regels van de formulelijst.",
+   "syllabusRef": "D3.1",
+   "keywords": [
+    "afgeleide",
+    "differentieren",
+    "somregel",
+    "productregel",
+    "quotientregel",
+    "kettingregel",
+    "formulelijst"
+   ],
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Notaties: $f'(x)$ en $\\frac{dy}{dx}$. De afgeleide geeft de **helling** van de grafiek."
+    },
+    {
+     "type": "heading",
+     "text": "Standaardafgeleiden (uit je hoofd)"
+    },
+    {
+     "type": "formula",
+     "id": "afg-macht",
+     "latex": "f(x) = a \\cdot x^n \\;\\Rightarrow\\; f'(x) = a \\cdot n \\cdot x^{n-1}",
+     "spoken": "f van x is a keer x tot de n, dan is f accent van x a keer n keer x tot de n min 1",
+     "badge": "paraat",
+     "caption": "Machtsfunctie",
+     "question": "Afgeleide van $f(x) = a \\cdot x^n$?"
+    },
+    {
+     "type": "formula",
+     "id": "afg-constant",
+     "latex": "f(x) = c \\;\\Rightarrow\\; f'(x) = 0",
+     "spoken": "f van x is c, dan is f accent van x nul",
+     "badge": "paraat",
+     "caption": "Een constante verandert niet",
+     "question": "Afgeleide van een constante $c$?"
+    },
+    {
+     "type": "formula",
+     "id": "afg-lineair",
+     "latex": "f(x) = ax + b \\;\\Rightarrow\\; f'(x) = a",
+     "spoken": "f van x is a x plus b, dan is f accent van x a",
+     "badge": "paraat",
+     "caption": "Lineaire functie: de rc"
+    },
+    {
+     "type": "formula",
+     "id": "afg-e",
+     "latex": "f(x) = e^x \\;\\Rightarrow\\; f'(x) = e^x",
+     "spoken": "f van x is e tot de x, dan is f accent van x e tot de x",
+     "badge": "paraat",
+     "caption": "De $e$-macht blijft zichzelf",
+     "question": "Afgeleide van $e^x$?"
+    },
+    {
+     "type": "formula",
+     "id": "afg-gmacht",
+     "latex": "f(x) = g^x \\;\\Rightarrow\\; f'(x) = g^x \\cdot \\ln(g)",
+     "spoken": "f van x is g tot de x, dan is f accent van x g tot de x keer ln g",
+     "badge": "paraat",
+     "caption": "Exponentiële functie",
+     "question": "Afgeleide van $g^x$?"
+    },
+    {
+     "type": "formula",
+     "id": "afg-ln",
+     "latex": "f(x) = \\ln(x) \\;\\Rightarrow\\; f'(x) = \\frac{1}{x}",
+     "spoken": "f van x is ln x, dan is f accent van x 1 gedeeld door x",
+     "badge": "paraat",
+     "caption": "Natuurlijke logaritme",
+     "question": "Afgeleide van $\\ln(x)$?"
+    },
+    {
+     "type": "formula",
+     "id": "afg-log",
+     "latex": "f(x) = \\glog{g}(x) \\;\\Rightarrow\\; f'(x) = \\frac{1}{x \\cdot \\ln(g)}",
+     "spoken": "f van x is g-log x, dan is f accent van x 1 gedeeld door x keer ln g",
+     "badge": "paraat",
+     "caption": "Logaritme met grondtal $g$",
+     "question": "Afgeleide van $\\glog{g}(x)$?"
+    },
+    {
+     "type": "warning",
+     "text": "De afgeleide van $\\sin(x)$ hoef je bij wiskunde A **niet** te kennen (syllabus D3.1)."
+    },
+    {
+     "type": "heading",
+     "text": "Rekenregels (staan op de formulelijst)"
+    },
+    {
+     "type": "formula",
+     "id": "afg-som",
+     "latex": "s(x) = f(x) + g(x) \\;\\Rightarrow\\; s'(x) = f'(x) + g'(x)",
+     "spoken": "somregel: de afgeleide van een som is de som van de afgeleiden",
+     "badge": "formulelijst",
+     "caption": "Somregel"
+    },
+    {
+     "type": "formula",
+     "id": "afg-verschil",
+     "latex": "v(x) = f(x) - g(x) \\;\\Rightarrow\\; v'(x) = f'(x) - g'(x)",
+     "spoken": "verschilregel: de afgeleide van een verschil is het verschil van de afgeleiden",
+     "badge": "formulelijst",
+     "caption": "Verschilregel"
+    },
+    {
+     "type": "formula",
+     "id": "afg-product",
+     "latex": "p(x) = f(x) \\cdot g(x) \\;\\Rightarrow\\; p'(x) = f'(x) \\cdot g(x) + f(x) \\cdot g'(x)",
+     "spoken": "productregel: f accent keer g plus f keer g accent",
+     "badge": "formulelijst",
+     "caption": "Productregel"
+    },
+    {
+     "type": "formula",
+     "id": "afg-quotient",
+     "latex": "q(x) = \\frac{f(x)}{g(x)} \\;\\Rightarrow\\; q'(x) = \\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{\\left(g(x)\\right)^2}",
+     "spoken": "quotientregel: f accent keer g min f keer g accent, gedeeld door g kwadraat",
+     "badge": "formulelijst",
+     "caption": "Quotiëntregel"
+    },
+    {
+     "type": "formula",
+     "id": "afg-ketting",
+     "latex": "k(x) = f(g(x)) \\;\\Rightarrow\\; k'(x) = f'(g(x)) \\cdot g'(x)",
+     "spoken": "kettingregel: f accent van g van x keer g accent van x",
+     "badge": "formulelijst",
+     "caption": "Kettingregel (ook: $\\frac{dk}{dx} = \\frac{df}{dg} \\cdot \\frac{dg}{dx}$)"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld",
+     "problem": "Differentieer $f(x) = 5x^3 - \\frac{2}{x}$.",
+     "steps": [
+      {
+       "text": "Schrijf de breuk als macht: $\\frac{2}{x} = 2x^{-1}$.",
+       "latex": "f(x) = 5x^3 - 2x^{-1}"
+      },
+      {
+       "text": "Differentieer term voor term (somregel en machtsregel).",
+       "latex": "f'(x) = 15x^2 + 2x^{-2}"
+      },
+      {
+       "text": "Eventueel terug als breuk:",
+       "latex": "f'(x) = 15x^2 + \\frac{2}{x^2}"
+      }
+     ]
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld (kettingregel)",
+     "problem": "Differentieer $f(x) = e^{3x^2}$.",
+     "steps": [
+      {
+       "text": "Buitenkant $e^{\\ldots}$, binnenkant $3x^2$.",
+       "latex": "f'(x) = e^{3x^2} \\cdot \\frac{d}{dx}\\left(3x^2\\right)"
+      },
+      {
+       "text": "De afgeleide van de binnenkant is $6x$.",
+       "latex": "f'(x) = 6x \\cdot e^{3x^2}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d3-extremen",
+   "title": "Afgeleide gebruiken: toppen en raaklijnen",
+   "summary": "Extreme waarden, optimaliseren en de raaklijn.",
+   "syllabusRef": "D3.5",
+   "keywords": [
+    "extremen",
+    "maximum",
+    "minimum",
+    "top",
+    "optimaliseren",
+    "raaklijn",
+    "toppen"
+   ],
+   "blocks": [
+    {
+     "type": "formula",
+     "id": "ext-nul",
+     "latex": "f'(x) = 0",
+     "spoken": "f accent van x is nul",
+     "badge": "paraat",
+     "caption": "Bij een top is de helling nul",
+     "question": "Welke vergelijking los je op om een top te vinden?"
+    },
+    {
+     "type": "text",
+     "text": "Werkwijze: los $f'(x) = 0$ op, bereken de bijbehorende $y$-waarde met $f$, en bepaal met een tekenschema of de GR of het een **maximum** of **minimum** is."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "teken van $f'$",
+      "de grafiek"
+     ],
+     "rows": [
+      [
+       "$f'(x) > 0$",
+       "stijgt"
+      ],
+      [
+       "$f'(x) = 0$",
+       "horizontale raaklijn: top of buigpunt"
+      ],
+      [
+       "$f'(x) < 0$",
+       "daalt"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "id": "ext-raaklijn",
+     "latex": "y = f'(a) \\cdot (x - a) + f(a)",
+     "spoken": "y is f accent van a keer x min a, plus f van a",
+     "badge": "paraat",
+     "caption": "Raaklijn in het punt $\\left(a, f(a)\\right)$",
+     "question": "Formule van de raaklijn in $x = a$?"
+    },
+    {
+     "type": "example",
+     "title": "Voorbeeld (optimaliseren)",
+     "problem": "De winst is $W(q) = -0,5q^2 + 40q - 300$ euro bij $q$ stuks. Bij welk aantal is de winst maximaal?",
+     "steps": [
+      {
+       "text": "Differentieer.",
+       "latex": "W'(q) = -q + 40"
+      },
+      {
+       "text": "Los $W'(q) = 0$ op.",
+       "latex": "-q + 40 = 0 \\;\\Rightarrow\\; q = 40"
+      },
+      {
+       "text": "Omdat $a < 0$ is het een maximum. Bereken de winst:",
+       "latex": "W(40) = -0,5 \\cdot 1600 + 1600 - 300 = 500"
+      },
+      {
+       "text": "Maximale winst € 500 bij 40 stuks."
+      }
+     ]
+    },
+    {
+     "type": "numworks",
+     "app": "Functies",
+     "steps": [
+      "Voer de functie in en ga naar **Grafiek**.",
+      "**Bereken** → **Maximum** of **Minimum**, en selecteer een gebied rond de top.",
+      "Controleer met `diff(f(x),x,a)` dat de afgeleide daar (bijna) 0 is."
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "Bij 'bereken exact/algebraïsch' moet je het via $f'(x) = 0$ doen. Bij 'bereken' of 'benader' mag je de GR gebruiken — noteer dan wel je aanpak."
+    }
+   ]
+  }
+ ]
+}
