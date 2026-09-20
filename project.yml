@@ -62,12 +62,26 @@ targets:
         BUNDLE_LOADER: $(TEST_HOST)
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/Spiekbrief.app/Spiekbrief
 
+  SpiekbriefUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: SpiekbriefUITests
+    dependencies:
+      - target: Spiekbrief
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Spiekbrief
+
 schemes:
   Spiekbrief:
     build:
       targets:
         Spiekbrief: all
         SpiekbriefTests: [test]
+        SpiekbriefUITests: [test]
     test:
       targets:
         - SpiekbriefTests
+        - SpiekbriefUITests

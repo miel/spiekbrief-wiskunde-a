@@ -12,6 +12,10 @@ struct FormulaView: View {
     /// Largest size that Dynamic Type may scale a formula to; wider formulas scroll sideways.
     static let maxFontSize: CGFloat = 34
 
+    /// Accessibility identifiers, read by the UI tests.
+    static let placeholderID = "formula-placeholder"
+    static let renderedID = "formula-rendered"
+
     @ScaledMetric(relativeTo: .body) private var scaledSize: CGFloat = 20
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.formulaRenderer) private var renderer
@@ -43,8 +47,18 @@ struct FormulaView: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(spoken ?? LatexSpeech.approximate(latex))
+        // Lets FormulaRenderingUITests see whether a row is still waiting on its image. The
+        // placeholder is the full card width, so its frame alone does not give this away.
+        .accessibilityIdentifier(formula == nil ? Self.placeholderID : Self.renderedID)
         .task(id: key) {
-            guard renderer.cached(key) == nil else { return }
+            // Always publish the result, cache hit included: `body` reads the cache directly, but
+            // that read is not a SwiftUI dependency. `TopicView` prewarms a whole topic on appear,
+            // so by the time this runs the key is usually already cached — returning early then
+            // leaves the row on its placeholder for good, because nothing re-renders it.
+            if let hit = renderer.cached(key) {
+                rendered = (key, hit)
+                return
+            }
             switch await renderer.render(key) {
             case .success(let formula): rendered = (key, formula)
             case .failure: failed = key
