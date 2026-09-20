@@ -1,0 +1,114 @@
+/*
+ * The design layer the iOS app got for free from the system.
+ *
+ * Values carried over from the Swift source: the accent colour from
+ * Assets.xcassets/AccentColor.colorset, the domain tints from BrowseView.swift, the badge
+ * colours from BadgeLabel.swift and the card metrics from BlockView.swift. The greys are the
+ * iOS system colours so the two apps look like siblings.
+ */
+
+:root {
+  /* Accent — AccentColor.colorset */
+  --accent: #1d66c7;
+  --accent-contrast: #ffffff;
+
+  /* iOS system colours, light */
+  --blue: #007aff;
+  --green: #34c759;
+  --orange: #ff9500;
+  --purple: #af52de;
+  --teal: #30b0c7;
+  --pink: #ff2d55;
+  --indigo: #5856d6;
+  --yellow: #ffcc00;
+  --red: #ff3b30;
+  --gray: #8e8e93;
+
+  /* Grouped backgrounds */
+  --bg: #f2f2f7;
+  --bg-elevated: #ffffff;
+  --bg-tertiary: #e9e9ef;
+
+  /* Labels */
+  --label: #000000;
+  --label-secondary: rgba(60, 60, 67, 0.6);
+  --label-tertiary: rgba(60, 60, 67, 0.3);
+  --separator: rgba(60, 60, 67, 0.29);
+  --fill-quaternary: rgba(116, 116, 128, 0.08);
+
+  /* Card token — BlockView.swift: 14 pt padding, 12 pt radius, 35 % tint border */
+  --card-padding: 14px;
+  --card-radius: 12px;
+  --card-border-alpha: 0.35;
+  --callout-alpha: 0.12;
+  --badge-alpha: 0.16;
+
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  /* Minimum hit target, as on iOS */
+  --tap: 44px;
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --content-max: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --accent: #5a9efa;
+    --accent-contrast: #000000;
+
+    --blue: #0a84ff;
+    --green: #30d158;
+    --orange: #ff9f0a;
+    --purple: #bf5af2;
+    --teal: #40c8e0;
+    --pink: #ff375f;
+    --indigo: #5e5ce6;
+    --yellow: #ffd60a;
+    --red: #ff453a;
+    --gray: #8e8e93;
+
+    --bg: #000000;
+    --bg-elevated: #1c1c1e;
+    --bg-tertiary: #2c2c2e;
+
+    --label: #ffffff;
+    --label-secondary: rgba(235, 235, 245, 0.6);
+    --label-tertiary: rgba(235, 235, 245, 0.3);
+    --separator: rgba(84, 84, 88, 0.65);
+    --fill-quaternary: rgba(118, 118, 128, 0.24);
+
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme='dark'] {
+  --accent: #5a9efa;
+  --accent-contrast: #000000;
+
+  --blue: #0a84ff;
+  --green: #30d158;
+  --orange: #ff9f0a;
+  --purple: #bf5af2;
+  --teal: #40c8e0;
+  --pink: #ff375f;
+  --indigo: #5e5ce6;
+  --yellow: #ffd60a;
+  --red: #ff453a;
+  --gray: #8e8e93;
+
+  --bg: #000000;
+  --bg-elevated: #1c1c1e;
+  --bg-tertiary: #2c2c2e;
+
+  --label: #ffffff;
+  --label-secondary: rgba(235, 235, 245, 0.6);
+  --label-tertiary: rgba(235, 235, 245, 0.3);
+  --separator: rgba(84, 84, 88, 0.65);
+  --fill-quaternary: rgba(118, 118, 128, 0.24);
+
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+}

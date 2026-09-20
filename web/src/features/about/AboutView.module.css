@@ -1,0 +1,37 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section {
+  --tint: var(--separator);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.heading {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--label-secondary);
+}
+
+.counts {
+  color: var(--label-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--label-tertiary);
+  text-align: center;
+}

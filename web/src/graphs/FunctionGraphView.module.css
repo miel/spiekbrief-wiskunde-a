@@ -1,0 +1,150 @@
+.graph {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.formula {
+  display: block;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.formula::-webkit-scrollbar {
+  display: none;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: var(--label-secondary);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch {
+  width: 16px;
+  height: 3px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.dashed {
+  background-image: linear-gradient(to right, currentColor 60%, transparent 0%);
+}
+
+.ruleLabels {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.6875rem;
+  color: var(--label-secondary);
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sliderTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8125rem;
+}
+
+.sliderValue {
+  color: var(--label-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.slider input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+  min-height: 28px;
+}
+
+.info {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--label-secondary);
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+}
+
+.picker select {
+  font: inherit;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--separator);
+  background: var(--bg-elevated);
+  color: var(--label);
+}
+
+/* Segmented control, the web stand-in for SwiftUI's .pickerStyle(.segmented) */
+.segmented {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 9px;
+  background: var(--fill-quaternary);
+}
+
+.segment,
+.segmentOn {
+  flex: 1;
+  min-height: 30px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--label);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.segmentOn {
+  background: var(--bg-elevated);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Name of a rule line drawn inside the plot, e.g. μ on the normal curve. */
+.ruleName {
+  font-size: 9px;
+  fill: var(--label-secondary);
+  paint-order: stroke;
+  stroke: var(--bg-elevated);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}

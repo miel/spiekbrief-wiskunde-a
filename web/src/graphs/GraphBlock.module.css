@@ -1,0 +1,86 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: -6px -6px -6px 0;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--label-secondary);
+}
+
+.expand {
+  width: var(--tap);
+  height: var(--tap);
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  color: var(--label-secondary);
+  cursor: pointer;
+}
+
+.expand:hover {
+  background: var(--fill-quaternary);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  padding-top: env(safe-area-inset-top);
+}
+
+.overlayBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--separator);
+}
+
+.overlayBar button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: var(--tap);
+  padding: 0 8px;
+  background: none;
+  border: 0;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.overlayBody {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  max-width: var(--content-max);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.missing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--card-radius);
+  background: color-mix(in srgb, var(--orange) 12%, transparent);
+  font-size: 0.9375rem;
+}

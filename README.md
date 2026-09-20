@@ -1,6 +1,9 @@
 # Spiekbrief Wiskunde A (vwo 6)
 
-Native SwiftUI iPhone app: a Dutch cheat sheet for the final exam **wiskunde A vwo**
+A Dutch cheat sheet for the final exam **wiskunde A vwo**, as a native SwiftUI iPhone app and
+as an installable offline web app (`web/`). Both read the same generated content.
+
+The iPhone app: a cheat sheet for the final exam **wiskunde A vwo**
 (centraal examen 2027, domains B, C and D) plus statistics and probability (domain E, SE).
 Designed for an iPhone 12 mini (375 × 812 pt), iOS 18+, offline, no accounts, no tracking.
 
@@ -25,6 +28,23 @@ Tests:
 xcodebuild test -scheme Spiekbrief -destination 'platform=iOS Simulator,name=iPhone 12 mini'
 ```
 
+## Web version
+
+`web/` is a Vite + React + TypeScript port with the same features: browse, search, favorites,
+flashcards and all 15 interactive graphs. It imports the generated JSON straight from
+`Spiekbrief/Resources/Content`, so there is no second copy to keep in sync.
+
+```sh
+cd web
+npm install
+npm run dev
+npm run test:all     # vitest + playwright, including the offline check
+```
+
+See [web/README.md](web/README.md) for what differs from the iOS app. In short: KaTeX instead
+of SwiftMath (in a browser the objection below does not apply), inline SVG instead of Swift
+Charts, `localStorage` instead of SwiftData.
+
 ## Content
 
 Content is authored in Python (readable LaTeX in raw strings) and generated into the JSON that
@@ -36,7 +56,9 @@ python3 tools/content/build.py    # validates, then writes Spiekbrief/Resources/
 
 The build script checks unique ids, known badges, balanced braces and `$…$`, and that every
 referenced graph exists in `GraphLibrary`. The Swift tests check the same files again and
-additionally typeset **every** formula, so a LaTeX typo fails the test run.
+additionally typeset **every** formula, so a LaTeX typo fails the test run. The web tests
+repeat both checks through KaTeX, and additionally assert that the hand-maintained graph-id
+lists in `build.py`, `GraphLibrary.swift` and `web/src/graphs/library.ts` still agree.
 
 Each formula carries a badge:
 
@@ -74,6 +96,7 @@ Spiekbrief/
   Resources/Content/*.json      generated content — edit tools/content, not these
 SpiekbriefTests/                content, formula lint, unit tests (Swift Testing)
 tools/content/                  content sources in Python
+web/                            the web app; reads the same Resources/Content JSON
 ```
 
 ## Calculator tips

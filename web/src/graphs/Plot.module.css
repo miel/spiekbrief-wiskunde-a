@@ -1,0 +1,61 @@
+.plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+
+/* Recessive grid and axes: the curves are the content. */
+.grid line {
+  stroke: var(--separator);
+  stroke-width: 0.5;
+  opacity: 0.5;
+}
+
+.axis line {
+  stroke: var(--label-tertiary);
+  stroke-width: 1;
+}
+
+.rule {
+  stroke: var(--label-secondary);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+.tickLabel {
+  font-size: 8px;
+  fill: var(--label-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.axisLabel {
+  font-size: 9px;
+  font-style: italic;
+  fill: var(--label-secondary);
+  /* a halo, so the name stays readable where it sits over a gridline */
+  paint-order: stroke;
+  stroke: var(--bg-elevated);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+
+.point {
+  fill: var(--label);
+}
+
+.pointLabel {
+  font-size: 8px;
+  font-weight: 500;
+  fill: var(--label);
+  paint-order: stroke;
+  stroke: var(--bg-elevated);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+
+.bar {
+  /* 2px surface gap between adjacent fills */
+  stroke: var(--bg-elevated);
+  stroke-width: 1;
+}

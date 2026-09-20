@@ -1,0 +1,118 @@
+.panel {
+  --tint: var(--separator);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.count {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.boxes {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 60px;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.boxCount {
+  font-size: 0.6875rem;
+  color: var(--label-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.start:disabled {
+  background: var(--fill-quaternary);
+  color: var(--label-tertiary);
+  cursor: default;
+}
+
+.again {
+  background: none;
+  border: 0;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  min-height: var(--tap);
+  cursor: pointer;
+}
+
+.footnote {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--label-secondary);
+}
+
+.filterList {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--separator);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--tap);
+  padding: 10px 14px;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.filterRow + .filterRow {
+  border-top: 1px solid var(--separator);
+}
+
+.filterRow:hover {
+  background: var(--fill-quaternary);
+}
+
+.filterOn {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.filterCount {
+  font-size: 0.8125rem;
+  color: var(--label-secondary);
+  font-variant-numeric: tabular-nums;
+}
