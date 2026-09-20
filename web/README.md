@@ -29,6 +29,32 @@ imports the *same* generated JSON the iOS app bundles. There is no sync step and
 copy. Content is still authored in `tools/content` and built with
 `python3 tools/content/build.py`; both apps pick the result up from there.
 
+## Publishing
+
+`.github/workflows/deploy-pages.yml` builds and deploys to GitHub Pages on every push to
+`main` that touches `web/` or the content, and can also be run by hand from the Actions tab.
+Enable it once under **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+It lands at `https://<user>.github.io/<repo>/`. Three things follow from that subpath and are
+already handled:
+
+- `VITE_BASE` is set to `/<repo>/` in the workflow, so the bundle, the router `basename`
+  (`import.meta.env.BASE_URL`) and the PWA `scope` all agree. Locally `base` stays `/`.
+- GitHub Pages has no rewrite rules, so the workflow copies `index.html` to `404.html`.
+  Pages serves that for unknown paths and the SPA boots and routes from it, which is what
+  makes a deep link like `/onderwerp/c1-lineair` work.
+- The service worker is registered under the same subpath, so offline still works.
+
+To check a Pages-shaped build locally:
+
+```sh
+VITE_BASE=/spiekbrief-wiskunde-a/ npm run build
+cp dist/index.html dist/404.html
+```
+
+Any other static host works too; most rewrite unknown paths to `index.html` themselves, in
+which case the `404.html` copy is harmless but unnecessary.
+
 ## How this differs from the iOS app
 
 | | iOS | web |

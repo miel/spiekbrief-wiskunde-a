@@ -7,7 +7,12 @@ import { fileURLToPath, URL } from 'node:url'
 // We import it straight from there so there is no copy to keep in sync.
 const contentDir = fileURLToPath(new URL('../Spiekbrief/Resources/Content', import.meta.url))
 
+// GitHub Pages serves a project site from /<repo>/, so the build needs to know its subpath.
+// The deploy workflow sets VITE_BASE; locally it stays at the root.
+const base = process.env.VITE_BASE ?? '/'
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -18,8 +23,8 @@ export default defineConfig({
         short_name: 'Spiekbrief',
         description: 'Spiekbrief voor het centraal examen wiskunde A vwo.',
         lang: 'nl',
-        start_url: '/',
-        scope: '/',
+        start_url: base,
+        scope: base,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#f2f2f7',
@@ -36,7 +41,7 @@ export default defineConfig({
         // woff2 only: every browser that can run this app supports it, and precaching
         // the woff and ttf copies of the KaTeX fonts would triple the offline payload.
         globIgnores: ['**/*.{woff,ttf}'],
-        navigateFallback: '/index.html',
+        navigateFallback: `${base}index.html`,
       },
     }),
   ],
